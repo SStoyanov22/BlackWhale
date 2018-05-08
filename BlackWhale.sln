@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackWhale.Models", "BlackW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackWhale.Data", "BlackWhale.Data\BlackWhale.Data.csproj", "{CCF74BB1-84DC-4273-84F7-6EC846C496AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackWhale.Service", "BlackWhale.Service\BlackWhale.Service.csproj", "{FD089245-E6E6-4204-A5F8-132C16E82838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackWhale.Core", "BlackWhale.Core\BlackWhale.Core.csproj", "{C526452C-5C3B-4FEC-ACF7-6C4DCAEB11FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{CCF74BB1-84DC-4273-84F7-6EC846C496AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCF74BB1-84DC-4273-84F7-6EC846C496AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCF74BB1-84DC-4273-84F7-6EC846C496AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD089245-E6E6-4204-A5F8-132C16E82838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD089245-E6E6-4204-A5F8-132C16E82838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD089245-E6E6-4204-A5F8-132C16E82838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD089245-E6E6-4204-A5F8-132C16E82838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C526452C-5C3B-4FEC-ACF7-6C4DCAEB11FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C526452C-5C3B-4FEC-ACF7-6C4DCAEB11FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C526452C-5C3B-4FEC-ACF7-6C4DCAEB11FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C526452C-5C3B-4FEC-ACF7-6C4DCAEB11FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

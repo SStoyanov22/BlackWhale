@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlackWhale.Models.EntityModels
 {
     public class Review
     {
+        [Key]
+        [Required]
+        public int Id { get; set; }
 
         public Review()
         {

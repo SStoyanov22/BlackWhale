@@ -5,13 +5,12 @@ namespace BlackWhale.Web
     using System;
     using System.Security.Claims;
     using System.Threading.Tasks;
-    using Models.EntityModels;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
     using Microsoft.Owin.Security;
-
+    using Models.EntityModels;
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)

@@ -1,3 +1,6 @@
+using System.Data.Entity;
+using BlackWhale.Data.Migrations;
+
 namespace BlackWhale.Data
 {
     using Models.EntityModels;
@@ -7,7 +10,10 @@ namespace BlackWhale.Data
         public BlackWhaleDbContext()
             : base("BlackWhale",throwIfV1Schema: false)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BlackWhaleDbContext,Configuration>());
         }
+
+        public DbSet<Review> Reviews { get; set; }
 
         public static BlackWhaleDbContext Create()
         {

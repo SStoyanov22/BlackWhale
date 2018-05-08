@@ -1,4 +1,6 @@
-﻿namespace BlackWhale.Models.EntityModels
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BlackWhale.Models.EntityModels
 {
     using System.Security.Claims;
     using System.Threading.Tasks;
@@ -9,7 +11,7 @@
     {
         public ApplicationUser()
         {
-                this.
+                
         }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
