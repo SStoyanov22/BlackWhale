@@ -59,7 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlackWhaleDbContext.cs" />
+    <Compile Include="Data\BlackWhaleDbContext.cs" />
+    <Compile Include="Data\BlackWhaleData.cs" />
+    <Compile Include="Data\Repository.cs" />
+    <Compile Include="Interfaces\IBlackWhaleData.cs" />
+    <Compile Include="Interfaces\IBlackWhaleDbContext.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
