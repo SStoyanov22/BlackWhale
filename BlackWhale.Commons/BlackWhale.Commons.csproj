@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FD089245-E6E6-4204-A5F8-132C16E82838}</ProjectGuid>
+    <ProjectGuid>{F82A9D0C-9EC2-4547-AEE7-121BC4D760F0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlackWhale.Service</RootNamespace>
-    <AssemblyName>BlackWhale.Service</AssemblyName>
+    <RootNamespace>BlackWhale.Commons</RootNamespace>
+    <AssemblyName>BlackWhale.Commons</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,16 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,27 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interface\IReviewService.cs" />
+    <Compile Include="Mapper\AutoMapperConfig.cs" />
+    <Compile Include="Mapper\IHaveCustomMappings.cs" />
+    <Compile Include="Mapper\IMapFrom.cs" />
+    <Compile Include="Mapper\IMapTo.cs" />
+    <Compile Include="Mapper\TypesMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ReviewService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BlackWhale.Core\BlackWhale.Core.csproj">
-      <Project>{c526452c-5c3b-4fec-acf7-6c4dcaeb11ff}</Project>
-      <Name>BlackWhale.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BlackWhale.Data\BlackWhale.Data.csproj">
-      <Project>{ccf74bb1-84dc-4273-84f7-6ec846c496ab}</Project>
-      <Name>BlackWhale.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BlackWhale.Models\BlackWhale.Models.csproj">
-      <Project>{009ba1dd-6e3f-4f9b-9612-538d735c068e}</Project>
-      <Name>BlackWhale.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

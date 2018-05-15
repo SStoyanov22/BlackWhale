@@ -99,8 +99,8 @@
     <Compile Include="EntityModels\GitHubReview.cs" />
     <Compile Include="EntityModels\Review.cs" />
     <Compile Include="EntityModels\Status.cs" />
-    <Compile Include="EntityModels\Symbol.cs" />
-    <Compile Include="EntityModels\Type.cs" />
+    <Compile Include="EntityModels\TokenSymbol.cs" />
+    <Compile Include="EntityModels\TokenType.cs" />
     <Compile Include="EntityModels\Verdict.cs" />
     <Compile Include="EntityModels\VerdictSymbol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

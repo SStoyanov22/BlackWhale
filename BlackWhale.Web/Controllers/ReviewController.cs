@@ -2,8 +2,12 @@
 
 namespace BlackWhale.Web.Controllers
 {
+    using AutoMapper;
     using Service.Interface;
+    using System.Collections.Generic;
     using System.Web.Mvc;
+    using ViewModels.Review;
+
     public class ReviewController : Controller
     {
         private readonly IReviewService reviewService;
@@ -17,6 +21,8 @@ namespace BlackWhale.Web.Controllers
         public ActionResult Index()
         {
             var reviews = this.reviewService.GetAllReviews().ToList();
+
+            var viewModel = Mapper.Map<ICollection<ReviewIndexViewModel>>(reviews);
 
             return View(reviews);
         }
