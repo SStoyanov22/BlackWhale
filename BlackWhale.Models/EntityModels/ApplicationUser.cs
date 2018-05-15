@@ -1,12 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BlackWhale.Models.EntityModels
+﻿namespace BlackWhale.Models.EntityModels
 {
     using System.Security.Claims;
     using System.Threading.Tasks;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
+
+    [Table("ApplicationUser")]
     public class ApplicationUser : IdentityUser
     {
         public ApplicationUser()

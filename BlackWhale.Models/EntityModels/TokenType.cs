@@ -3,13 +3,13 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Status")]
-    public class Status
+    [Table("TokenType")]
+    public class TokenType
     {
         [Key]
         [Required]
         public int Id { get; set; }
-        //Completed     /      Upcoming ....
-        public string Type { get; set; }
+        // App/Platform     --     Utility         --        Currency              --      Brand Token            -- Security Token
+        public string Description { get; set; }
     }
 }

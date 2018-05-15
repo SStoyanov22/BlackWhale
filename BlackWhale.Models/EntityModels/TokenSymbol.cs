@@ -3,13 +3,14 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Status")]
-    public class Status
+    [Table("TokenSymbol")]
+    public class TokenSymbol    
     {
         [Key]
         [Required]
         public int Id { get; set; }
-        //Completed     /      Upcoming ....
-        public string Type { get; set; }
+        // Etherium - ETH
+        public string ShortName { get; set; }
+
     }
 }
