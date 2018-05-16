@@ -1,4 +1,4 @@
-﻿namespace BlackWhale.Models.ViewModels.Account
+﻿namespace BlackWhale.Web.ViewModels.Account
 {
     using System.Web.Mvc;
     using System.Collections.Generic;

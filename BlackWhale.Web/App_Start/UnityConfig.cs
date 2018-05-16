@@ -9,6 +9,11 @@
     using Data.Interfaces;
     using Data.Data;
     using Data;
+    using Microsoft.AspNet.Identity;
+    using Models.EntityModels;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Controllers;
+    using Unity.Injection;
 
     public class UnityConfig
     {
@@ -19,7 +24,10 @@
             // register all your components with the container here 
             // it is NOT necessary to register your controllers 
 
-            // e.g. container.RegisterType<ITestService, TestService>(); 
+            // e.g. container.RegisterType<ITestService, TestService>();
+            container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>();
+            container.RegisterType<AccountController>(new InjectionConstructor());
+
             container.RegisterType<IBlackWhaleDbContext, BlackWhaleDbContext>();
             container.RegisterType<IBlackWhaleData, BlackWhaleData>();
 

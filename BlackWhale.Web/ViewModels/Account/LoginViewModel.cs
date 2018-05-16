@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-namespace BlackWhale.Models.ViewModels.Account
+namespace BlackWhale.Web.ViewModels.Account
 {
     public class LoginViewModel
     {
