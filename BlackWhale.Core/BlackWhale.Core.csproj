@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO\ReviewDTO.cs" />
+    <Compile Include="DTO\Review\CreateReviewDTO.cs" />
+    <Compile Include="DTO\GitHubReview\CreateGitHubReviewDTO.cs" />
+    <Compile Include="DTO\Review\ReviewDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using BlackWhale.Core.DTO;
-using BlackWhale.Data;
+using BlackWhale.Core.DTO.Review;
 using BlackWhale.Service.Interface;
 using BlackWhale.Data.Interfaces;
+using System;
+using BlackWhale.Models.EntityModels;
 
 namespace BlackWhale.Service.Services
 {
@@ -20,12 +21,24 @@ namespace BlackWhale.Service.Services
         {
             var reviews = this.data.Reviews.All().Select(r => new ReviewDTO()
             {
-                Id = r.Id
+                Id = r.Id,
+                Description = r.Description
 
             }).ToList();
 
             return reviews;
 
         }
+
+        public void CreateReview(CreateReviewDTO dto)
+        {
+            var review = new Review();
+
+            review.Description = dto.Description;
+
+            this.data.Reviews.Add(review);
+            this.data.SaveChanges();
+        }
+
     }
 }

@@ -18,5 +18,6 @@
 
         IRepository<GitHubReview> GitHubReviews { get; }
 
+        int SaveChanges();
     }
 }

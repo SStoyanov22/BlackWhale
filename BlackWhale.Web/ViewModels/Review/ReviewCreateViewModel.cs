@@ -2,11 +2,12 @@
 {
     using Commons.Mapper;
     using Core.DTO.Review;
+    using GitHubReview;
+    using System.ComponentModel.DataAnnotations;
 
-    public class ReviewIndexViewModel : IMapTo<ReviewDTO>, IMapFrom<ReviewDTO>
+    public class ReviewCreateViewModel : IMapTo<CreateReviewDTO>
     {
-        public int Id { get; set; }
-
+        [Required]
         public string Description { get; set; }
 
     }

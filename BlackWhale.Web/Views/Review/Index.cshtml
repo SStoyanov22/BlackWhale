@@ -1,7 +1,23 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-
+﻿@model IEnumerable<BlackWhale.Web.ViewModels.Review.ReviewIndexViewModel>
+<div class="wrapper">
+    <header class="pagetitle pagetitle-sm">
+        <div class="container">
+            <div class="divtable irow">
+                <div class="divcell">
+                    <h1>Review</h1>
+                    <div class="divider">
+                    </div>
+                    <span class="subtitle">List of reviews</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="text-right">
+            <a href="/Review/Create" class="btn btn-primary">Create Review</a>
+        </div>
+        <div class="content">
+            @Html.DisplayForModel()
+        </div>
+    </div>
+</div>
