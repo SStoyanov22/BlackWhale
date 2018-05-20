@@ -26,7 +26,7 @@
 
         public IRepository<Verdict> Verdicts { get { return this.GetRepository<Verdict>(); } }
 
-        public IRepository<VerdictSymbol> VerdictSymbols { get { return this.GetRepository<VerdictSymbol>(); } }
+        public IRepository<VerdictType> VerdictTypes { get { return this.GetRepository<VerdictType>(); } }
 
         public IRepository<GitHubReview> GitHubReviews{ get { return this.GetRepository<GitHubReview>(); } }
 

@@ -23,7 +23,7 @@ namespace BlackWhale.Data
 
         public IDbSet<Status> Statuses { get; set; }
 
-        public IDbSet<VerdictSymbol> VerdictSymbols { get; set; }
+        public IDbSet<VerdictType> VerdictTypes { get; set; }
 
         public IDbSet<Verdict> Vrdicts { get; set; }
 

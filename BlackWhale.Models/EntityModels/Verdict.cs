@@ -15,7 +15,9 @@
         [Required]
         public int Id { get; set; }
 
-        public string Category { get; set; }
+        public virtual VerdictType VerdictType { get; set; }
+
+        public virtual Review Review{ get; set; }
 
         public string Description { get; set; }
 

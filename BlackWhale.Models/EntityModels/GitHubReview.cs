@@ -13,11 +13,13 @@
             this.Commits = 0;
             this.Contributers = 0;
             this.Branches = 0;
-            this.DateOfReview = DateTime.Now;
+            this.CreatedOn = DateTime.Now;
             this.Issues = 0;
             this.Releases = 0;
             this.Repositories = 0;
             this.Stars = 0;
+            this.IsHidden = true;
+            this.IsFinished = false;
 
         }
 
@@ -43,7 +45,14 @@
 
         public string Overall { get; set; }
 
-        public DateTime DateOfReview { get; set; }
+        public bool IsHidden { get; set; }
+
+        public bool IsFinished { get; set; }
+
+        [Required]
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime ModifiedOn { get; set; }
 
     }
 }

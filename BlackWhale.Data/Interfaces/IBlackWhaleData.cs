@@ -12,7 +12,7 @@
 
         IRepository<Status> Statuses { get; }
 
-        IRepository<VerdictSymbol> VerdictSymbols { get;}
+        IRepository<VerdictType> VerdictTypes { get;}
 
         IRepository<Verdict> Verdicts { get; }
 

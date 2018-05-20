@@ -14,7 +14,7 @@
 
         IDbSet<Status> Statuses { get; set; }
 
-        IDbSet<VerdictSymbol> VerdictSymbols { get; set; }
+        IDbSet<VerdictType> VerdictTypes { get; set; }
 
         IDbSet<Verdict> Vrdicts { get; set; }
 
