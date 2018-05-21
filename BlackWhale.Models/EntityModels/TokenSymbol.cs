@@ -15,7 +15,7 @@
         public string ShortName { get; set; }
 
         [Required]
-        public virtual Review Review { get; set; }
+        public virtual ICOReview Review { get; set; }
 
     }
 }

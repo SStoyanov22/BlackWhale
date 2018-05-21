@@ -17,7 +17,7 @@
 
         public virtual VerdictType VerdictType { get; set; }
 
-        public virtual Review Review{ get; set; }
+        public virtual ICOReview Review{ get; set; }
 
         public string Description { get; set; }
 

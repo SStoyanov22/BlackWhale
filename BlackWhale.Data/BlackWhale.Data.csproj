@@ -73,6 +73,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BlackWhale.Commons\BlackWhale.Commons.csproj">
+      <Project>{F82A9D0C-9EC2-4547-AEE7-121BC4D760F0}</Project>
+      <Name>BlackWhale.Commons</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BlackWhale.Models\BlackWhale.Models.csproj">
       <Project>{009ba1dd-6e3f-4f9b-9612-538d735c068e}</Project>
       <Name>BlackWhale.Models</Name>

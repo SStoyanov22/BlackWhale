@@ -1,12 +1,12 @@
 ﻿namespace BlackWhale.Service.Interface
 {
-    using System.Collections.Generic;
     using Core.DTO.Review;
+    using System.Collections.Generic;
 
     public interface IReviewService
     {
-        IEnumerable<ReviewDTO> GetAllReviews();
+        IEnumerable<ReviewDTO> GetAll();
 
-        void CreateReview(CreateReviewDTO dto);
+        void Create(CreateReviewDTO dto);
     }
 }

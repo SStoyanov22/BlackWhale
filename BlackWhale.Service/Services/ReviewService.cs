@@ -17,7 +17,7 @@ namespace BlackWhale.Service.Services
             this.data = data;
         }
 
-        public IEnumerable<ReviewDTO> GetAllReviews()
+        public IEnumerable<ReviewDTO> GetAll()
         {
             var reviews = this.data.Reviews.All().Select(r => new ReviewDTO()
             {
@@ -30,9 +30,9 @@ namespace BlackWhale.Service.Services
 
         }
 
-        public void CreateReview(CreateReviewDTO dto)
+        public void Create(CreateReviewDTO dto)
         {
-            var review = new Review();
+            var review = new ICOReview();
 
             review.Description = dto.Description;
 

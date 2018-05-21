@@ -14,6 +14,6 @@ namespace BlackWhale.Models.EntityModels
         // App/Platform     --     Utility         --        Currency              --      Brand Token            -- Security Token
         public string Description { get; set; }
 
-        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<ICOReview> Reviews { get; set; }
     }
 }

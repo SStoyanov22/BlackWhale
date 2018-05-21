@@ -5,6 +5,7 @@ namespace BlackWhale.Data
     using Interfaces;
     using System.Data.Entity;
     using Migrations;
+    using System;
 
     public class BlackWhaleDbContext : IdentityDbContext, IBlackWhaleDbContext
     {
@@ -17,7 +18,7 @@ namespace BlackWhale.Data
 
         public IDbSet<ApplicationUser> User { get; set; }
 
-        public IDbSet<Review> Reviews { get; set; }
+        public IDbSet<ICOReview> Reviews { get; set; }
 
         public IDbSet<Category> Categories { get; set; }
 
@@ -29,6 +30,7 @@ namespace BlackWhale.Data
 
         public IDbSet<GitHubReview> GitHubReviews { get; set; }
 
+        public IDbSet<Exchange> Exchanges { get; set; }
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {

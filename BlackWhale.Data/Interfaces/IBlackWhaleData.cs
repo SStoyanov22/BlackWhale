@@ -6,7 +6,7 @@
     {
         IRepository<ApplicationUser> Users { get; }
 
-        IRepository<Review> Reviews { get;}
+        IRepository<ICOReview> Reviews { get;}
 
         IRepository<Category> Categories { get; }
 
@@ -17,6 +17,8 @@
         IRepository<Verdict> Verdicts { get; }
 
         IRepository<GitHubReview> GitHubReviews { get; }
+
+        IRepository<Exchange> Exchanges { get; }
 
         int SaveChanges();
     }

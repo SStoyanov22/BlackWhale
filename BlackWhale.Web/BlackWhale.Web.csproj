@@ -241,6 +241,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ExchangeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
@@ -258,6 +260,8 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Exchange\ExchangeCreateViewModel.cs" />
+    <Compile Include="ViewModels\Exchange\ExchangeIndexViewModel.cs" />
     <Compile Include="ViewModels\GitHubReview\GitHubReviewCreateViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\ConfigureTwoFactorViewModel.cs" />
@@ -365,9 +369,13 @@
     <Content Include="Views\Review\Index.cshtml" />
     <Content Include="Views\Review\Create.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ReviewIndexViewModel.cshtml" />
+    <Content Include="Views\Exchange\Index.cshtml" />
+    <Content Include="Views\Exchange\Create.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ExchangeIndexViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -8,7 +8,7 @@
     using ViewModels.Review;
     using System.Linq;
 
-    public class ReviewController : Controller
+    public class ReviewController : BaseController
     {
         private readonly IReviewService reviewService;
 
@@ -20,7 +20,7 @@
         // GET: Review
         public ActionResult Index()
         {
-            var reviews = this.reviewService.GetAllReviews().ToList();
+            var reviews = this.reviewService.GetAll().ToList();
 
             var viewModel = Mapper.Map<IEnumerable<ReviewIndexViewModel>>(reviews);
 
@@ -41,7 +41,7 @@
             }
 
             var dto = Mapper.Map<CreateReviewDTO>(model);
-            this.reviewService.CreateReview(dto);
+            this.reviewService.Create(dto);
 
             return RedirectToAction(nameof(this.Index));
         }

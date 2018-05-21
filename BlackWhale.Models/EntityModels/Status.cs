@@ -15,6 +15,6 @@ namespace BlackWhale.Models.EntityModels
         [Required]
         public string Type { get; set; }
 
-        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<ICOReview> Reviews { get; set; }
     }
 }

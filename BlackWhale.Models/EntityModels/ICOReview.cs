@@ -6,14 +6,14 @@ namespace BlackWhale.Models.EntityModels
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Review")]
-    public class Review
+    [Table("ICOReview")]
+    public class ICOReview
     {
         [Key]
         [Required]
         public int Id { get; set; }
 
-        public Review()
+        public ICOReview()
         {
             this.UserVerdicts = new HashSet<Verdict>();
             this.Views = 0;

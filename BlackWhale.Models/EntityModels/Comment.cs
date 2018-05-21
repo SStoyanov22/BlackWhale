@@ -23,7 +23,7 @@
         public virtual ApplicationUser Author { get; set; }
 
         [Required]
-        public virtual Review Review { get; set; }
+        public virtual ICOReview Review { get; set; }
 
         [Required]
         public DateTime CreatedOn  { get; set; }

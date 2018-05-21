@@ -8,7 +8,7 @@
     {
         IDbSet<ApplicationUser> User { get; set; }
 
-        IDbSet<Review> Reviews { get; set; }
+        IDbSet<ICOReview> Reviews { get; set; }
 
         IDbSet<Category> Categories { get; set; }
 
@@ -19,6 +19,8 @@
         IDbSet<Verdict> Vrdicts { get; set; }
 
         IDbSet<GitHubReview> GitHubReviews { get; set; }
+
+        IDbSet<Exchange> Exchanges { get; set; }
 
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
 

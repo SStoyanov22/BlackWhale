@@ -32,6 +32,7 @@
             container.RegisterType<IBlackWhaleData, BlackWhaleData>();
 
             container.RegisterType<IReviewService, ReviewService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IExchangeService, ExchangeService>(new HierarchicalLifetimeManager());
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

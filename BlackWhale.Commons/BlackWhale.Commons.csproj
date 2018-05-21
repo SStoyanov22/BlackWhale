@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\GlobalConstants.cs" />
+    <Compile Include="Constants\GlobalConstants.Roles.cs" />
     <Compile Include="Mapper\AutoMapperConfig.cs" />
     <Compile Include="Mapper\IHaveCustomMappings.cs" />
     <Compile Include="Mapper\IMapFrom.cs" />

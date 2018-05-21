@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
     using ViewModels.Account;
+    using Commons.Constants;
 
     [Authorize]
     public class AccountController : Controller
@@ -153,6 +154,7 @@
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    result = UserManager.AddToRole(user.Id, GlobalConstants.ROLE_USER);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

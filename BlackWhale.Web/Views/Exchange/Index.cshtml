@@ -1,23 +1,24 @@
-﻿@model IEnumerable<BlackWhale.Web.ViewModels.Review.ReviewIndexViewModel>
+﻿@model IEnumerable<BlackWhale.Web.ViewModels.Exchange.ExchangeIndexViewModel>
 <div class="wrapper">
     <header class="pagetitle pagetitle-sm">
         <div class="container">
             <div class="divtable irow">
                 <div class="divcell">
-                    <h1>Review</h1>
+                    <h1>Exchange</h1>
                     <div class="divider">
                     </div>
-                    <span class="subtitle">List of Reviews</span>
+                    <span class="subtitle">List of Exchanges</span>
                 </div>
             </div>
         </div>
     </header>
     <div class="content">
         <div class="text-right">
-            <a href="/Review/Create" class="btn btn-primary">Create Review</a>
+            <a href="/Exchange/Create" class="btn btn-primary">Create Exchange</a>
         </div>
         <div class="content">
             @Html.DisplayForModel()
+
         </div>
     </div>
 </div>

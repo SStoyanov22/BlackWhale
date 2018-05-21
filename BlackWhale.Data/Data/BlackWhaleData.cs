@@ -18,7 +18,7 @@
 
         public IRepository<ApplicationUser> Users{ get { return this.GetRepository<ApplicationUser>(); } }
 
-        public IRepository<Review> Reviews{ get { return this.GetRepository<Review>(); } }
+        public IRepository<ICOReview> Reviews{ get { return this.GetRepository<ICOReview>(); } }
 
         public IRepository<Status> Statuses{ get { return this.GetRepository<Status>(); } }
 
@@ -29,6 +29,8 @@
         public IRepository<VerdictType> VerdictTypes { get { return this.GetRepository<VerdictType>(); } }
 
         public IRepository<GitHubReview> GitHubReviews{ get { return this.GetRepository<GitHubReview>(); } }
+
+        public IRepository<Exchange> Exchanges { get { return this.GetRepository<Exchange>(); } }
 
         public int SaveChanges()
         {
