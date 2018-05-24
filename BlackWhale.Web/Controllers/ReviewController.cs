@@ -33,6 +33,7 @@
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(ReviewCreateViewModel model)
         {
             if (!this.ModelState.IsValid)
