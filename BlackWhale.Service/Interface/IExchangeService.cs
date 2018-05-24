@@ -1,13 +1,18 @@
-﻿
-namespace BlackWhale.Service.Interface
+﻿namespace BlackWhale.Service.Interface
 {
     using Core.DTO.Exchange;
-    using System.Collections.Generic;
+    using Response;
 
     public interface IExchangeService
     {
-        IEnumerable<ExchangeDTO> GetAll();
+        IResponse GetAll();
 
-        void Create(ExchangeCreateDTO dto);
+        IResponse Create(ExchangeCreateDTO dto);
+
+        IResponse Edit(ExchangeEditDTO dto);
+
+        IResponse GetById(int id);
+
+        IResponse Delete(int id);
     }
 }

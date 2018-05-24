@@ -26,12 +26,6 @@
             return View(model);
         }
 
-        [HttpGet]
-        public ActionResult Create()
-        {
-            return this.View();
-        }
-
         [HttpPost]
         public ActionResult Create(CategoryCreateViewModel model)
         {
@@ -77,6 +71,19 @@
             var model = Mapper.Map<CategoryEditViewModel>(result.ResultData);
 
             return this.View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var result = this.categoryService.Delete(id);
+
+            if (result.Status == ResponseStatus.Fail)
+            {
+                return RedirectToAction(nameof(this.Index));
+            }
+
+            return RedirectToAction(nameof(this.Index));
         }
     }
 }
