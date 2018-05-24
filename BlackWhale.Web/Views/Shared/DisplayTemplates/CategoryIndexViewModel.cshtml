@@ -3,7 +3,10 @@
     <div class="entry">
         <div class="entry-content">
             <p>@Model.Title</p>
-        </div>
+            </div>
+            <a href="/Category/Edit?id=@Model.Id" class="btn btn-info">Edit</a>
+
+            <a href="/Category/Delete?id=@Model.Id" class="btn btn-info">Delete</a>
     </div>
 </div>
 <hr>

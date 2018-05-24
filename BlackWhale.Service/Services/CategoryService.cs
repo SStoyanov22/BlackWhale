@@ -57,5 +57,65 @@
 
             return response;
         }
+
+        public IResponse Edit(CategoryEditDTO dto)
+        {
+            var response = new Response();
+            var category = this.data.Categories.All().FirstOrDefault(a => a.Id == dto.Id);
+
+            if (category != null)
+            {
+                category.Title = dto.Title;
+            }
+            this.data.SaveChanges();
+            
+
+            response.Status = ResponseStatus.Success;
+            return response;
+        }
+
+        public IResponse GetById(int id)
+        {
+            var response = new Response();
+
+            var category = this.data.Categories.All().FirstOrDefault(c => c.Id == id);
+            if (category != null)
+            {
+                var dto = new CategoryDTO()
+                {
+                    Id = category.Id,
+                    Title = category.Title
+                };
+
+                response.Status = ResponseStatus.Success;
+                response.ResultData = dto;
+
+                return response;
+            }
+
+            response.Status = ResponseStatus.Fail;
+            response.Message = "There is no Category matching the provided Id!";
+            return response;
+        }
+
+        public IResponse Delete(int id)
+        {
+            var response = new Response();
+            var category = this.data.Categories.All().FirstOrDefault(c => c.Id == id);
+
+            if (category != null)
+            {
+                response.Status = ResponseStatus.Success;
+                response.Message = string.Format("Category with Id = {0} was deleted",id);
+                this.data.Categories.Delete(category);
+                this.data.SaveChanges();
+
+                return response;
+            }
+
+            response.Status = ResponseStatus.Fail;
+            response.Message = "There is no Category matching the provided Id!";
+            return response;
+        }
     }
 }

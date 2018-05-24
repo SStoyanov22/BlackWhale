@@ -1,0 +1,33 @@
+﻿@model BlackWhale.Web.ViewModels.Exchange.ExchangeEditViewModel
+@using (Html.BeginForm("Edit", "Exchange", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.HiddenFor(m => m.Id)
+    <div class="wrapper">
+        <header class="pagetitle pagetitle-sm">
+            <div class="container">
+                <div class="divtable irow">
+                    <div class="divcell">
+                        <h1>Exchange</h1>
+                        <div class="divider">
+                        </div>
+                        <span class="subtitle">Edit Exchange</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="row irow-xs">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.Name, new { @class = "col-sm-3" })
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(c => c.Name)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info"> Edit </button>
+        </div>
+    </div>
+}

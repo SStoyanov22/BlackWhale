@@ -1,0 +1,33 @@
+﻿@model BlackWhale.Web.ViewModels.Category.CategoryEditViewModel
+@using (Html.BeginForm("Edit", "Category", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.HiddenFor(m => m.Id)
+    <div class="wrapper">
+        <header class="pagetitle pagetitle-sm">
+            <div class="container">
+                <div class="divtable irow">
+                    <div class="divcell">
+                        <h1>Category</h1>
+                        <div class="divider">
+                        </div>
+                        <span class="subtitle">Edit Category</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <div class="row irow-xs">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.LabelFor(c => c.Title, new { @class = "col-sm-3" })
+                        <div class="col-sm-9">
+                            @Html.TextBoxFor(c => c.Title)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info"> Edit </button>
+        </div>
+    </div>
+}

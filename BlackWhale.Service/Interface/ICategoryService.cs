@@ -9,5 +9,11 @@
         IResponse GetAll();
 
         IResponse Create(CategoryCreateDTO dto);
+
+        IResponse Edit(CategoryEditDTO dto);
+
+        IResponse GetById(int id);
+
+        IResponse Delete(int id);
     }
 }
