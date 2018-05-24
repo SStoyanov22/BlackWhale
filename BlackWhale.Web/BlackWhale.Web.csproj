@@ -262,6 +262,7 @@
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Category\CategoryCreateViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryEditViewModel.cs" />
     <Compile Include="ViewModels\Category\CategoryIndexViewModel.cs" />
     <Compile Include="ViewModels\Exchange\ExchangeCreateViewModel.cs" />
     <Compile Include="ViewModels\Exchange\ExchangeIndexViewModel.cs" />
@@ -467,6 +468,7 @@
     <Content Include="Views\Category\Create.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CategoryIndexViewModel.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

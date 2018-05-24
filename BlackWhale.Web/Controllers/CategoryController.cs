@@ -49,7 +49,34 @@
             }
 
             return RedirectToAction(nameof(this.Index));
+        }
 
+        [HttpPost]
+        public ActionResult Edit(CategoryEditViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            var dto = Mapper.Map<CategoryEditDTO>(model);
+            var result = this.categoryService.Edit(dto);
+
+            if (result.Status == ResponseStatus.Fail)
+            {
+                return RedirectToAction(nameof(this.Edit));
+            }
+
+            return RedirectToAction(nameof(this.Index));
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var result = this.categoryService.GetById(id);
+            var model = Mapper.Map<CategoryEditViewModel>(result.ResultData);
+
+            return this.View(model);
         }
     }
 }

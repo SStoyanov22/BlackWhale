@@ -7,6 +7,6 @@
     public class CategoryCreateViewModel : IMapTo<CategoryCreateDTO>
     {
         [Required]
-        public string Title { get; set; }
+        public string Title { get; set;}
     }
 }
