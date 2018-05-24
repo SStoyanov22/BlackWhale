@@ -1,0 +1,24 @@
+﻿@model IEnumerable<BlackWhale.Web.ViewModels.Category.CategoryIndexViewModel>
+<div class="wrapper">
+    <header class="pagetitle pagetitle-sm">
+        <div class="container">
+            <div class="divtable irow">
+                <div class="divcell">
+                    <h1>Exchange</h1>
+                    <div class="divider">
+                    </div>
+                    <span class="subtitle">List of Categories</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="text-right">
+            <a href="/Category/Create" class="btn btn-primary">Create Category</a>
+        </div>
+        <div class="content">
+            @Html.DisplayForModel()
+
+        </div>
+    </div>
+</div>
