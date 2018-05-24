@@ -1,12 +1,13 @@
 ﻿namespace BlackWhale.Service.Interface
 {
     using BlackWhale.Core.DTO.Category;
+    using Response;
     using System.Collections.Generic;
 
     public interface ICategoryService
     {
-        IEnumerable<CategoryDTO> GetAll();
+        IResponse GetAll();
 
-        void Create(CategoryCreateDTO dto);
+        IResponse Create(CategoryCreateDTO dto);
     }
 }

@@ -7,6 +7,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System;
+    using Response;
 
     public class CategoryService : ICategoryService
     {
@@ -17,11 +18,16 @@
             this.data = data;
         }
 
-        public void Create(CategoryCreateDTO dto)
+        public IResponse Create(CategoryCreateDTO dto)
         {
+            var response = new Response();
+
             if (this.data.Categories.All().Any(a => a.Title == dto.Title))
             {
+                response.Status = ResponseStatus.Fail;
+                response.Message = "A category with this title already exist";
                 // add notification ( Notify)
+                return response;
             }
             else
             {
@@ -31,10 +37,14 @@
                 this.data.Categories.Add(category);
                 this.data.SaveChanges();
             }
-            
+
+            response.Status = ResponseStatus.Success;
+            return response;
         }
-        public IEnumerable<CategoryDTO> GetAll()
+        public IResponse GetAll()
         {
+            var response = new Response();
+
             var categories = this.data.Categories.All().Select(e => new CategoryDTO()
             {
                 Id = e.Id,
@@ -42,7 +52,10 @@
 
             }).ToList();
 
-            return categories;
+            response.Status = ResponseStatus.Success;
+            response.ResultData = categories;
+
+            return response;
         }
     }
 }

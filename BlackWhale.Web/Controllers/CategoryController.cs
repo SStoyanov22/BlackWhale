@@ -3,6 +3,7 @@
     using AutoMapper;
     using BlackWhale.Core.DTO.Category;
     using Service.Interface;
+    using Service.Response;
     using System.Collections.Generic;
     using System.Web.Mvc;
     using ViewModels.Category;
@@ -20,7 +21,7 @@
         public ActionResult Index()
         {
             var categories = this.categoryService.GetAll();
-            var model = Mapper.Map<IEnumerable<CategoryIndexViewModel>>(categories);
+            var model = Mapper.Map<IEnumerable<CategoryIndexViewModel>>(categories.ResultData);
 
             return View(model);
         }
@@ -40,7 +41,12 @@
             }
 
             var dto = Mapper.Map<CategoryCreateDTO>(model);
-            this.categoryService.Create(dto);
+            var result =  this.categoryService.Create(dto);
+
+            if (result.Status == ResponseStatus.Fail)
+            {
+                return RedirectToAction(nameof(this.Create));
+            }
 
             return RedirectToAction(nameof(this.Index));
 
