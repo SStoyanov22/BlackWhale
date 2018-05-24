@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\Category\CategoryDTO.cs" />
+    <Compile Include="DTO\Category\CategoryCreateDTO.cs" />
     <Compile Include="DTO\Exchange\ExchangeCreateDTO.cs" />
     <Compile Include="DTO\Exchange\ExchangeDTO.cs" />
     <Compile Include="DTO\Review\CreateReviewDTO.cs" />

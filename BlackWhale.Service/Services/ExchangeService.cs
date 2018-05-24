@@ -18,11 +18,18 @@
 
         public void Create(ExchangeCreateDTO dto)
         {
-            var exchange = new Exchange();
-            exchange.Name = dto.Name;
+            if (this.data.Exchanges.All().Any(e => e.Name == dto.Name))
+            {
+                //add notification ( Notify)
+            }
+            else
+            {
+                var exchange = new Exchange();
+                exchange.Name = dto.Name;
 
-            this.data.Exchanges.Add(exchange);
-            this.data.SaveChanges();
+                this.data.Exchanges.Add(exchange);
+                this.data.SaveChanges();
+            }
         }
 
         public IEnumerable<ExchangeDTO> GetAll()

@@ -34,6 +34,8 @@
             container.RegisterType<IReviewService, ReviewService>(new HierarchicalLifetimeManager());
             container.RegisterType<IExchangeService, ExchangeService>(new HierarchicalLifetimeManager());
 
+            container.RegisterType<ICategoryService, CategoryService>(new HierarchicalLifetimeManager());
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

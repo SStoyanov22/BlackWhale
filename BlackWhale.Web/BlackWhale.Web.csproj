@@ -242,6 +242,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ExchangeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -260,6 +261,8 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryCreateViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoryIndexViewModel.cs" />
     <Compile Include="ViewModels\Exchange\ExchangeCreateViewModel.cs" />
     <Compile Include="ViewModels\Exchange\ExchangeIndexViewModel.cs" />
     <Compile Include="ViewModels\GitHubReview\GitHubReviewCreateViewModel.cs" />
@@ -372,6 +375,9 @@
     <Content Include="Views\Exchange\Index.cshtml" />
     <Content Include="Views\Exchange\Create.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ExchangeIndexViewModel.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CategoryIndexViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
