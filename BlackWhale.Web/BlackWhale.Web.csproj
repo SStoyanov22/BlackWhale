@@ -494,6 +494,8 @@
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Exchange\Edit.cshtml" />
     <Content Include="Views\Shared\NotyNotifications.cshtml" />
+    <Content Include="Views\Shared\Templates\_ArticleTemplate.cshtml" />
+    <Content Include="Views\Shared\_Navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
