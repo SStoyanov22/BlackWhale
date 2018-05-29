@@ -1,6 +1,7 @@
 ﻿namespace BlackWhale.Models.EntityModels
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public class Comment
@@ -17,7 +18,7 @@
         [Required]
         [MinLength(1)]
         [MaxLength(280)]
-        public string Text { get; set; }
+        public string Content { get; set; }
 
         [Required]
         public virtual ApplicationUser Author { get; set; }

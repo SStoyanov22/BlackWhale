@@ -22,7 +22,7 @@ namespace BlackWhale.Service.Services
             var reviews = this.data.Reviews.All().Select(r => new ReviewDTO()
             {
                 Id = r.Id,
-                Description = r.Description
+                Description = r.Article
 
             }).ToList();
 
@@ -34,7 +34,7 @@ namespace BlackWhale.Service.Services
         {
             var review = new ICOReview();
 
-            review.Description = dto.Description;
+            review.Article = dto.Description;
 
             this.data.Reviews.Add(review);
             this.data.SaveChanges();

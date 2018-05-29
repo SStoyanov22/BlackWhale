@@ -21,6 +21,17 @@ namespace BlackWhale.Data.Migrations
         {
             this.SeedRoles(context);
             this.SeedUsers(context);
+            this.SeedCategories(context);
+            this.SeedStatuses(context);
+
+        }
+
+        private void SeedStatuses(BlackWhaleDbContext context)
+        {
+            context.Statuses.Add(new Status() { Description = "Upcoming" });
+            context.Statuses.Add(new Status() { Description = "Past" });
+            context.Statuses.Add(new Status() { Description = "Network / Communications" });
+
         }
 
         private void SeedRoles(BlackWhaleDbContext context)
@@ -55,6 +66,39 @@ namespace BlackWhale.Data.Migrations
                 };
                 manager.Create(founder, GlobalConstants.ADMINISTRATOR_PASSWORD);
                 manager.AddToRole(founder.Id, GlobalConstants.ROLE_ADMINISTRATOR);
+            }
+        }
+
+        private void SeedCategories(BlackWhaleDbContext context)
+        {
+            if (!context.Categories.Any())
+            {
+                context.Categories.Add(new Category() { Title = "Blockchain Platform" });
+                context.Categories.Add(new Category() { Title = "Blockchain Platform" });
+                context.Categories.Add(new Category() { Title = "Network / Communications" });
+                context.Categories.Add(new Category() { Title = "Finance" });
+                context.Categories.Add(new Category() { Title = "Payments / Wallets" });
+                context.Categories.Add(new Category() { Title = "Drugs / Health" });
+                context.Categories.Add(new Category() { Title = "Social Network" });
+                context.Categories.Add(new Category() { Title = "Commerce / Retail" });
+                context.Categories.Add(new Category() { Title = "Content / Advertising" });
+                context.Categories.Add(new Category() { Title = "Energy / Utilities" });
+                context.Categories.Add(new Category() { Title = "Gaming / AR / VR" });
+                context.Categories.Add(new Category() { Title = "Data / Computing / AI" });
+                context.Categories.Add(new Category() { Title = "Asset Management" });
+                context.Categories.Add(new Category() { Title = "Security / Identity" });
+                context.Categories.Add(new Category() { Title = "Funding / VC" });
+                context.Categories.Add(new Category() { Title = "Prediction Market" });
+                context.Categories.Add(new Category() { Title = "IoT" });
+                context.Categories.Add(new Category() { Title = "Jobs / Marketplace" });
+                context.Categories.Add(new Category() { Title = "Entertainment" });
+                context.Categories.Add(new Category() { Title = "Betting / Gambling" });
+                context.Categories.Add(new Category() { Title = "Real Estate" });
+                context.Categories.Add(new Category() { Title = "Education" });
+                context.Categories.Add(new Category() { Title = "Insurance" });
+                context.Categories.Add(new Category() { Title = "Music / Arts" });
+
+                context.SaveChanges();
             }
         }
     }

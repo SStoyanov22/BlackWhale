@@ -12,14 +12,10 @@
 
         IRepository<Status> Statuses { get; }
 
-        IRepository<VerdictType> VerdictTypes { get;}
-
-        IRepository<Verdict> Verdicts { get; }
-
         IRepository<GitHubReview> GitHubReviews { get; }
+        
+        IRepository<Comment> Comments { get; }
 
-        IRepository<Exchange> Exchanges { get; }
-
-        int SaveChanges();
+    int SaveChanges();
     }
 }

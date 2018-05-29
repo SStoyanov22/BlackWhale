@@ -14,13 +14,9 @@
 
         IDbSet<Status> Statuses { get; set; }
 
-        IDbSet<VerdictType> VerdictTypes { get; set; }
-
-        IDbSet<Verdict> Vrdicts { get; set; }
-
         IDbSet<GitHubReview> GitHubReviews { get; set; }
 
-        IDbSet<Exchange> Exchanges { get; set; }
+        IDbSet<Comment> Comments { get; set; }
 
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
 

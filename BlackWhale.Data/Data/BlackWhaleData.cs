@@ -23,14 +23,11 @@
         public IRepository<Status> Statuses{ get { return this.GetRepository<Status>(); } }
 
         public IRepository<Category> Categories{ get { return this.GetRepository<Category>(); } }
-
-        public IRepository<Verdict> Verdicts { get { return this.GetRepository<Verdict>(); } }
-
-        public IRepository<VerdictType> VerdictTypes { get { return this.GetRepository<VerdictType>(); } }
+       
 
         public IRepository<GitHubReview> GitHubReviews{ get { return this.GetRepository<GitHubReview>(); } }
 
-        public IRepository<Exchange> Exchanges { get { return this.GetRepository<Exchange>(); } }
+        public IRepository<Comment> Comments { get { return this.GetRepository<Comment>(); } }
 
         public int SaveChanges()
         {

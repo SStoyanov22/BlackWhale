@@ -24,13 +24,9 @@ namespace BlackWhale.Data
 
         public IDbSet<Status> Statuses { get; set; }
 
-        public IDbSet<VerdictType> VerdictTypes { get; set; }
-
-        public IDbSet<Verdict> Vrdicts { get; set; }
-
         public IDbSet<GitHubReview> GitHubReviews { get; set; }
 
-        public IDbSet<Exchange> Exchanges { get; set; }
+        public IDbSet<Comment> Comments { get; set; }
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
