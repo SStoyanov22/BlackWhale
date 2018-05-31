@@ -2,7 +2,6 @@
 {
     using Commons.Mapper;
     using Core.DTO.Review;
-    using GitHubReview;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
@@ -10,7 +9,7 @@
     {
         [Required]
         [AllowHtml]
-        public string Description { get; set; }
+        public string Article { get; set; }
 
     }
 }
