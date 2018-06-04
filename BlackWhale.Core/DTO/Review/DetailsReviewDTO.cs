@@ -1,24 +1,17 @@
-﻿namespace BlackWhale.Web.ViewModels.Review
+﻿namespace BlackWhale.Core.DTO.Review
 {
-    using Commons.Mapper;
-    using Core.DTO.Review;
-    using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
-
-    public class ReviewCreateViewModel : IMapTo<CreateReviewDTO>
+    using System;
+    public class DetailsReviewDTO
     {
         public int Id { get; set; }
-
-        [Required]
-        [AllowHtml]
-        public string Article { get; set; }
-
         public string Title { get; set; }
         public string Category { get; set; }
 
         public string Status { get; set; }
 
         public string Article { get; set; }
+
+        public string Description { get; set; }
 
         public int CountDolphins { get; set; }
 
@@ -40,6 +33,5 @@
         //public virtual ICollection<Comment> Comments { get; set; }
 
         public DateTime LastUpdated { get; set; }
-
     }
 }

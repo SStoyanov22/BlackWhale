@@ -1,13 +1,16 @@
-﻿using System.Collections.Generic;
+﻿
+namespace BlackWhale.Service.Services
+{
+using System.Collections.Generic;
 using System.Linq;
 using BlackWhale.Core.DTO.Review;
 using BlackWhale.Service.Interface;
 using BlackWhale.Data.Interfaces;
 using System;
 using BlackWhale.Models.EntityModels;
+    using BlackWhale.Service.Response;
+    using Response;
 
-namespace BlackWhale.Service.Services
-{
     public class ReviewService : IReviewService
     {
         private readonly IBlackWhaleData data;
@@ -22,8 +25,12 @@ namespace BlackWhale.Service.Services
             var reviews = this.data.Reviews.All().Select(r => new ReviewDTO()
             {
                 Id = r.Id,
-                Article = r.Article,
-                CommentsCount = r.Comments.Count
+                Description = r.Article,
+                Category = r.Category.Title,
+                LastUpdated = r.LastUpdated,
+                Status = r.Status.Description,
+                CommentsCount = r.Comments.Count,
+                Views = r.Views
 
             }).ToList();
 
@@ -31,15 +38,61 @@ namespace BlackWhale.Service.Services
 
         }
 
-        public void Create(CreateReviewDTO dto)
+        public IResponse Create(CreateReviewDTO dto)
         {
+            var response = new Response();
+            if (dto != null)
+        {
+                response.Status = ResponseStatus.Success;
+                response.ResultData = dto;
             var review = new ICOReview();
 
             review.Article = dto.Article;
 
             this.data.Reviews.Add(review);
             this.data.SaveChanges();
+                return response;
+            }
+
+            response.Status = ResponseStatus.Fail;
+            return response;
+
         }
 
+        public IResponse Details(int id)
+        {
+
+            var response = new Response();
+
+            var review = this.data.Reviews.All().FirstOrDefault(r => r.Id == id);
+            if (review != null)
+            {
+                var dto = new DetailsReviewDTO()
+                {
+                    Id = review.Id,
+                    Title = review.Title,
+                    Description = review.Description,
+                    Reviewer = review.Reviewer.UserName,
+                    Category = review.Category.Title,
+                    CommentsCount = review.Comments.Count,
+                    Status = review.Status.Description,
+                    LastUpdated = review.LastUpdated,
+                    Views = review.Views,
+                    CountDolphins = review.CountDolphins,
+                    CountPass = review.CountPass,
+                    CountShrimps = review.CountShrimps,
+                    CountWhales = review.CountWhales
+                };
+
+                response.Status = ResponseStatus.Success;
+                response.ResultData = dto;
+
+                return response;
+        }
+
+            response.Status = ResponseStatus.Fail;
+            response.Message = "There is no Review matching the provided Id!";
+            return response;
+        }
     }
 }

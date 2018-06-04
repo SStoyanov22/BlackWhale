@@ -78,5 +78,19 @@
 
             return Json(new { location = GlobalConstants.IMAGE_PATH + fileName });
         }
+
+        [HttpGet]
+        public ActionResult Details(ReviewCreateViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            var dto = Mapper.Map<DetailsReviewDTO>(model);
+            this.reviewService.Details(model.Id);
+
+            return this.View(model);
+        }
     }
 }
