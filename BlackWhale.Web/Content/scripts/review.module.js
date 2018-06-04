@@ -39,9 +39,12 @@
         var $reviewsContainerSelector = $("#reviews-container");
 
         $.get("/Review/GetReviews").then(function (reviews) {
-            debugger
             $reviewsContainerSelector.html(reviews);
         })
+
+        function initEvents() {
+
+        }
     }
 
     return {

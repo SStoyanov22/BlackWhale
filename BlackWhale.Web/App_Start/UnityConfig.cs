@@ -14,6 +14,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Controllers;
     using Unity.Injection;
+    using Service.CommentService;
 
     public class UnityConfig
     {
@@ -34,6 +35,7 @@
             container.RegisterType<IReviewService, ReviewService>(new HierarchicalLifetimeManager());
 
             container.RegisterType<ICategoryService, CategoryService>(new HierarchicalLifetimeManager());
+            container.RegisterType<ICommentService, CommentService>(new HierarchicalLifetimeManager());
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

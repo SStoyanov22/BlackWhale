@@ -247,7 +247,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\ComentsController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
@@ -268,6 +268,8 @@
     <Compile Include="ViewModels\Category\CategoryCreateViewModel.cs" />
     <Compile Include="ViewModels\Category\CategoryEditViewModel.cs" />
     <Compile Include="ViewModels\Category\CategoryIndexViewModel.cs" />
+    <Compile Include="ViewModels\Comment\CommentIndexViewModel.cs" />
+    <Compile Include="ViewModels\Comment\CreateCommentViewModel.cs" />
     <Compile Include="ViewModels\GitHubReview\GitHubReviewCreateViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\ConfigureTwoFactorViewModel.cs" />
@@ -303,6 +305,7 @@
     <Content Include="Content\mexico-theme\webfonts\fa-brands-400.svg" />
     <Content Include="Content\mexico-theme\webfonts\fa-regular-400.svg" />
     <Content Include="Content\mexico-theme\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\scripts\comment.module.js" />
     <Content Include="Content\scripts\notify.module.js" />
     <Content Include="Content\scripts\review.module.js" />
     <Content Include="favicon.ico" />
@@ -491,6 +494,9 @@
     <Content Include="Views\Shared\Templates\_ArticleTemplate.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Review\_ReviewsPartial.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CommentIndexViewModel.cshtml" />
+    <Content Include="Views\Review\_CommentsPartial.cshtml" />
+    <Content Include="Views\Review\_CreateCommentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,15 @@
+﻿@model BlackWhale.Web.ViewModels.Comment.CommentIndexViewModel
+<div class="container post format-standart">
+    <div class="entry">
+        <div class="entry-content">
+            <p>@Model.Author</p>
+        </div>
+
+        <div class="entry-content">
+            <p>@Model.Content</p>
+        </div>
+        <a href="/Comment/Edit?id=@Model.Id" class="btn btn-info">Edit</a>
+        <a href="/Comment/Delete?id=@Model.Id" class="btn btn-info">Delete</a>
+    </div>
+</div>
+<hr>

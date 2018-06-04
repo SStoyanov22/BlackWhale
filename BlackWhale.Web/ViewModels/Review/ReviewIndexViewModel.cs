@@ -9,5 +9,7 @@
 
         public string Article { get; set; }
 
+        public int CommentsCount { get; set; }
+
     }
 }
