@@ -51,8 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\ICategoryService.cs" />
+    <Compile Include="Interface\ICommentService.cs" />
     <Compile Include="Interface\IReviewService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CommentService.cs" />
     <Compile Include="Response\IResponse.cs" />
     <Compile Include="Response\Response.cs" />
     <Compile Include="Response\ResponseStatus.cs" />

@@ -1,3 +1,7 @@
 ﻿.cards-text-height{
     height : 312px;
 }
+
+.content [class*=container] + [class*=container] {
+    margin-top: 0px !important;
+}

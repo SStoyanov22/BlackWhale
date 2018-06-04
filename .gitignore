@@ -253,3 +253,7 @@ _Pvt_Extensions
 # JetBrains Rider
 .idea/
 *.sln.iml
+/BlackWhale.Core/DTO/Comment
+/BlackWhale.Service/Services/CommentService.cs
+/BlackWhale.Service/Interface/ICommentService.cs
+/BlackWhale.Web/Controllers/ComentsController.cs

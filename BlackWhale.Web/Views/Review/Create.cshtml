@@ -1,5 +1,5 @@
 ﻿@model BlackWhale.Web.ViewModels.Review.ReviewCreateViewModel
-@using (Html.BeginForm("Create", "Review", FormMethod.Post, new { @class = "form-horizontal" }))
+@using (Html.BeginForm("Create", "Review", FormMethod.Post, new { @class = "form-horizontal" , @id= "review-form"}))
 {
 <div class="wrapper">
     <header class="pagetitle pagetitle-sm">
@@ -18,9 +18,10 @@
         <div class="row irow-xs">
             <div class="col-sm-10">
                 <div class="form-group">
-                    @Html.LabelFor(r => r.Description, new { @class = "col-sm-12" })
-                    <div class="col-sm-10">
-                        @Html.TextAreaFor(r => r.Description, new { @id = "review-text-area"})
+                    @Html.LabelFor(r => r.Article, new { @class = "col-sm-12" })
+                    <div class="col-sm-10" id="form-review-content">
+                        @Html.TextAreaFor(r => r.Article, new { @id = "review-text-area"})
+                        <input type="file" id="images-upload" name="files" multiple style="display : none">
                     </div>
                 </div>
             </div>

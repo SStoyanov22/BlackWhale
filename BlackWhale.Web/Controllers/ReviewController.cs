@@ -7,6 +7,10 @@
     using System.Web.Mvc;
     using ViewModels.Review;
     using System.Linq;
+    using System.Web;
+    using System.IO;
+    using Commons.Constants;
+    using System;
 
     public class ReviewController : BaseController
     {
@@ -20,11 +24,17 @@
         // GET: Review
         public ActionResult Index()
         {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult GetReviews()
+        {
             var reviews = this.reviewService.GetAll().ToList();
 
             var viewModel = Mapper.Map<IEnumerable<ReviewIndexViewModel>>(reviews);
 
-            return View(viewModel);
+            return PartialView("~/Views/Review/_ReviewsPartial.cshtml", viewModel);
         }
 
         public ActionResult Create()
@@ -45,6 +55,28 @@
             this.reviewService.Create(dto);
 
             return RedirectToAction(nameof(this.Index));
+        }
+
+        [HttpPost]
+        public ActionResult Upload(HttpPostedFileBase files)
+        {
+            var image = Request.Files[0];
+            var fileName = Guid.NewGuid().ToString() + ".png";
+
+            if (image != null)
+            {
+                string path = Server.MapPath("~"+ GlobalConstants.IMAGE_PATH);
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+               
+                image.SaveAs(path + Path.GetFileName(fileName));
+
+            }
+
+            return Json(new { location = GlobalConstants.IMAGE_PATH + fileName });
         }
 
         [HttpGet]

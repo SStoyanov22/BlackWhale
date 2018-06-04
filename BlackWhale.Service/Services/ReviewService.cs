@@ -1,13 +1,13 @@
 ﻿
 namespace BlackWhale.Service.Services
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using BlackWhale.Core.DTO.Review;
-    using BlackWhale.Service.Interface;
-    using BlackWhale.Data.Interfaces;
-    using System;
-    using BlackWhale.Models.EntityModels;
+using System.Collections.Generic;
+using System.Linq;
+using BlackWhale.Core.DTO.Review;
+using BlackWhale.Service.Interface;
+using BlackWhale.Data.Interfaces;
+using System;
+using BlackWhale.Models.EntityModels;
     using BlackWhale.Service.Response;
     using Response;
 
@@ -42,15 +42,15 @@ namespace BlackWhale.Service.Services
         {
             var response = new Response();
             if (dto != null)
-            {
+        {
                 response.Status = ResponseStatus.Success;
                 response.ResultData = dto;
-                var review = new ICOReview();
+            var review = new ICOReview();
 
-                review.Article = dto.Description;
+            review.Article = dto.Article;
 
-                this.data.Reviews.Add(review);
-                this.data.SaveChanges();
+            this.data.Reviews.Add(review);
+            this.data.SaveChanges();
                 return response;
             }
 
@@ -88,7 +88,7 @@ namespace BlackWhale.Service.Services
                 response.ResultData = dto;
 
                 return response;
-            }
+        }
 
             response.Status = ResponseStatus.Fail;
             response.Message = "There is no Review matching the provided Id!";
