@@ -2,6 +2,7 @@
 {
     using Commons.Mapper;
     using Core.DTO.Review;
+    using System;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
@@ -17,8 +18,6 @@
         public string Category { get; set; }
 
         public string Status { get; set; }
-
-        public string Article { get; set; }
 
         public int CountDolphins { get; set; }
 

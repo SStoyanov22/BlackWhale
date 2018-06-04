@@ -496,14 +496,13 @@
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Review\_ReviewsPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CommentIndexViewModel.cshtml" />
-    <Content Include="Views\Review\_CommentsPartial.cshtml" />
-    <Content Include="Views\Review\_CreateCommentPartial.cshtml" />
+    <Content Include="Views\Coments\_CommentsPartial.cshtml" />
+    <Content Include="Views\Coments\_CreateCommentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Coments\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

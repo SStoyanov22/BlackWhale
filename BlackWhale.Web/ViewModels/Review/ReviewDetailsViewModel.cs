@@ -4,7 +4,7 @@
     using BlackWhale.Core.DTO.Review;
     using Commons.Mapper;
     using System.Web.Mvc;
-    public class ReviewDetailsViewModel : IMapTo<DetailsReviewDTO>
+    public class ReviewDetailsViewModel : IMapTo<DetailsReviewDTO>, IMapFrom<DetailsReviewDTO>
     {
         public int Id { get; set; }
 

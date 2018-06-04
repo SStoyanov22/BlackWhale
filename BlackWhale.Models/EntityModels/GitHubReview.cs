@@ -21,8 +21,6 @@
 
         public string Article { get; set; }
 
-        public virtual ICOReview review { get; set; }
-
         public bool IsHidden { get; set; }
 
         [Required]

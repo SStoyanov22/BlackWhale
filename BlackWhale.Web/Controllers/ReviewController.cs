@@ -80,15 +80,10 @@
         }
 
         [HttpGet]
-        public ActionResult Details(ReviewCreateViewModel model)
+        public ActionResult Details(int id)
         {
-            if (!this.ModelState.IsValid)
-            {
-                return this.View(model);
-            }
-
-            var dto = Mapper.Map<DetailsReviewDTO>(model);
-            this.reviewService.Details(model.Id);
+            var dto = this.reviewService.Details(id).ResultData;
+            var model = Mapper.Map<ReviewDetailsViewModel>(dto);
 
             return this.View(model);
         }
