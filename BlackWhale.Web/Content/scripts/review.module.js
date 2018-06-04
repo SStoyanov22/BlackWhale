@@ -43,7 +43,7 @@
         })
 
         function initEvents() {
-
+            var a = 5;
         }
     }
 
