@@ -44,8 +44,6 @@
     <Compile Include="DTO\Category\CategoryCreateDTO.cs" />
     <Compile Include="DTO\Category\CategoryEditDTO.cs" />
     <Compile Include="DTO\Comment\CommentCreateDTO.cs" />
-    <Compile Include="DTO\Comment\CommentDTO.cs" />
-    <Compile Include="DTO\Comment\CommentEditDTO.cs" />
     <Compile Include="DTO\Exchange\ExchangeCreateDTO.cs" />
     <Compile Include="DTO\Exchange\ExchangeDTO.cs" />
     <Compile Include="DTO\Exchange\ExchangeEditDTO.cs" />
