@@ -4,9 +4,7 @@
     using BlackWhale.Data.Interfaces;
     using BlackWhale.Models.EntityModels;
     using BlackWhale.Service.Interface;
-    using System.Collections.Generic;
     using System.Linq;
-    using System;
     using Response;
 
     public class CategoryService : ICategoryService

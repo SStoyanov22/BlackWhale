@@ -48,6 +48,7 @@
     <Compile Include="DTO\Exchange\ExchangeEditDTO.cs" />
     <Compile Include="DTO\Review\CreateReviewDTO.cs" />
     <Compile Include="DTO\GitHubReview\CreateGitHubReviewDTO.cs" />
+    <Compile Include="DTO\Review\DetailsReviewDTO.cs" />
     <Compile Include="DTO\Review\ReviewDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

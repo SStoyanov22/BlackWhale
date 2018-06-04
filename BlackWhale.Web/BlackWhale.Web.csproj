@@ -275,6 +275,7 @@
     <Compile Include="ViewModels\Manage\ManageLoginsViewModel.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewCreateViewModel.cs" />
+    <Compile Include="ViewModels\Review\ReviewDetailsViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

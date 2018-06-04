@@ -4,11 +4,11 @@
         <header class="entry-header">
             <h2>
                 <a href="">Rethinking Mobile Tutorials</a>
-            </h2><div class="meta"><a href="" class="author"><i class="fa fa-user"></i>Robert Plant</a> <small><i class="fa fa-calendar"></i>12 December, 2015</small> <a href=""><i class="fa fa-comment"></i>No Comments</a> <small><i class="fa fa-folder"></i> <a href="">Design</a>, <a href="">Music</a></small></div>
+            </h2><div class="meta"><a href="" class="author"><i class="fa fa-user"></i>@Model.Author</a> <small><i class="fa fa-calendar"></i>@Model.LastUpdated</small> <a href=""><i class="fa fa-comment"></i>@Model.CommentsCount</a> <small><i class="fa fa-folder"></i> <a href="">@Model.Category</a></small></div>
         </header>
         <div class="entry-content">
             @Html.Raw(Model.Description)
-            @Html.ActionLink("Read More", "Details", new { @id = Model.Id }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Read More", "/Review/Details", new { @id = Model.Id }, new { @class = "btn btn-primary" })
         </div>
     </div>
 </div>

@@ -10,16 +10,8 @@
         
         public GitHubReview()
         {
-            this.Commits = 0;
-            this.Contributers = 0;
-            this.Branches = 0;
-            this.CreatedOn = DateTime.Now;
-            this.Issues = 0;
-            this.Releases = 0;
-            this.Repositories = 0;
-            this.Stars = 0;
+            this.LastUpdated = DateTime.Now;
             this.IsHidden = true;
-            this.IsFinished = false;
 
         }
 
@@ -27,32 +19,14 @@
         [Required]
         public int Id { get; set; }
 
-        public int Commits { get; set; }
+        public string Article { get; set; }
 
-        public string IdeaInShort { get; set; }
-
-        public int Repositories { get; set; }
-
-        public int Branches { get; set; }
-
-        public int Releases { get; set; }
-
-        public int Contributers { get; set; }
-
-        public int Issues { get; set; }
-
-        public int Stars { get; set; }
-
-        public string Overall { get; set; }
+        public virtual ICOReview review { get; set; }
 
         public bool IsHidden { get; set; }
 
-        public bool IsFinished { get; set; }
-
         [Required]
-        public DateTime CreatedOn { get; set; }
-
-        public DateTime ModifiedOn { get; set; }
+        public DateTime LastUpdated { get; set; }
 
     }
 }

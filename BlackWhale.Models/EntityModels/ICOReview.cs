@@ -16,22 +16,37 @@
         {
             this.Views = 0;
             this.IsHidden = true;
+            this.LastUpdated = DateTime.Now;
 
         }
+
+        public string Title { get; set; }
         public virtual Category Category { get; set; }
 
         public virtual Status Status { get; set; }
 
         public string Article { get; set; }
 
+        public string Description { get; set; }
+
+        public int CountDolphins { get; set; }
+
+        public int CountWhales { get; set; }
+
+        public int CountShrimps { get; set; }
+
+        public int CountPass { get; set; }
+
         public int Views { get; set; }
 
-        //public virtual GitHubReview GitHubReview { get; set; }
+        public virtual GitHubReview GitHubReview { get; set; }
 
         public bool IsHidden { get; set; }
 
         public virtual ApplicationUser Reviewer { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
+
+        public DateTime LastUpdated { get; set; }
     }
 }
