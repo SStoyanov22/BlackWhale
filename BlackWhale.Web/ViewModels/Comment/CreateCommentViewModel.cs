@@ -1,6 +1,9 @@
-﻿namespace BlackWhale.Web.ViewModels.Comment
+﻿using BlackWhale.Commons.Mapper;
+using BlackWhale.Core.DTO.Comment;
+
+namespace BlackWhale.Web.ViewModels.Comment
 {
-    public class CreateCommentViewModel
+    public class CreateCommentViewModel : IMapTo<CommentCreateDTO>
     {
         public int ReviewId { get; set; }
 

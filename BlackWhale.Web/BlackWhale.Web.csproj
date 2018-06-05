@@ -449,7 +449,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -496,8 +495,10 @@
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Review\_ReviewsPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CommentIndexViewModel.cshtml" />
-    <Content Include="Views\Coments\_CommentsPartial.cshtml" />
-    <Content Include="Views\Coments\_CreateCommentPartial.cshtml" />
+    <Content Include="Views\Comments\_CommentsPartial.cshtml" />
+    <Content Include="Views\Comments\_CreateCommentPartial.cshtml" />
+    <Content Include="Views\Review\Details.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ReviewDetailsViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

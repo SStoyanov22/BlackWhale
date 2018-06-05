@@ -20,10 +20,6 @@
         <div class="entry-content">
             @Html.Raw(Model.Article)
 
-            <div id="comments-container">
-
-            </div>
-            <button class="btn btn-primary" id="button-comment-@Model.Id">Add Comment</button>
             @Html.ActionLink("Read More", "Details", new { @id = Model.Id }, new { @class = "btn btn-primary" })
         </div>
     </div>

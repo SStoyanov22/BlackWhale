@@ -31,7 +31,17 @@
             this.data.Comments.Add(comment);
             this.data.SaveChanges();
 
-            return new Response();
+            var response = new Response();
+            response.ResultData = new CommentDTO()
+            {
+                Id = comment.Id,
+                Author = comment.Author.UserName,
+                Content = comment.Content,
+                CreatedOn = comment.CreatedOn,
+                ReviewId = comment.Review.Id
+            };
+
+            return response;
         }
 
         public IResponse Delete(int id)

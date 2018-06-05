@@ -42,10 +42,15 @@
                 var dto = Mapper.Map<CommentCreateDTO>(model);
                 dto.Author = User.Identity.Name;
 
-                this.commentService.Create(dto);
-          
+               var comment =  (CommentDTO) this.commentService.Create(dto).ResultData;
+                var map = new List<CommentDTO>() { comment };
+
+                var viewModel = Mapper.Map<IEnumerable<CommentIndexViewModel>>(map);
+                return PartialView("~/Views/Comments/_CommentsPartial.cshtml", viewModel);
             }
-            return Json(new { });
+
+            return Json(new { }, JsonRequestBehavior.AllowGet);
+
         }
     }
 }
