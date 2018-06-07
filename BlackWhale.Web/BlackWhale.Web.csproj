@@ -498,6 +498,7 @@
     <Content Include="Views\Shared\DisplayTemplates\CommentIndexViewModel.cshtml" />
     <Content Include="Views\Coments\_CommentsPartial.cshtml" />
     <Content Include="Views\Coments\_CreateCommentPartial.cshtml" />
+    <Content Include="Views\Shared\_Sidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
