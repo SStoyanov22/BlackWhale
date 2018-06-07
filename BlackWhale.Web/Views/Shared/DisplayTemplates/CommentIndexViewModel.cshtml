@@ -1,15 +1,17 @@
 ﻿@model BlackWhale.Web.ViewModels.Comment.CommentIndexViewModel
-<div class="container post format-standart">
-    <div class="entry">
-        <div class="entry-content">
-            <p>@Model.Author</p>
-        </div>
-
-        <div class="entry-content">
-            <p>@Model.Content</p>
-        </div>
-        <a href="/Comment/Edit?id=@Model.Id" class="btn btn-info">Edit</a>
-        <a href="/Comment/Delete?id=@Model.Id" class="btn btn-info">Delete</a>
+<li>
+    <div class="commenterImage">
+        <img src="https://d1g5417jjjo7sf.cloudfront.net/assets/avatars/default-c07ab6aee51925561e375e8a1436c91d.jpg" />
+        <span class="sub-text-author">@Model.Author</span>
     </div>
-</div>
-<hr>
+    <div class="commentText">
+        <p class="comment-text-wrapper">@Model.Content</p> <span class="date sub-text">@Model.CreatedOn</span>
+        <div>
+            <span class="glyphicon glyphicon-pencil"></span>
+            <a href="/Comment/Edit?id=@Model.Id" class="comment-button-action">Edit</a>
+            <span class="glyphicon glyphicon-remove"></span>
+            <a href="/Comment/Delete?id=@Model.Id" class="comment-button-action">Delete</a>
+        </div>
+    </div>
+    <hr />
+</li>
