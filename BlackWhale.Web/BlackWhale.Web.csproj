@@ -499,6 +499,7 @@
     <Content Include="Views\Comments\_CreateCommentPartial.cshtml" />
     <Content Include="Views\Review\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ReviewDetailsViewModel.cshtml" />
+	 <Content Include="Views\Shared\_Sidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
