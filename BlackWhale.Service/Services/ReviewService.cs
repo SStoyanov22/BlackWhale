@@ -22,19 +22,27 @@ using BlackWhale.Models.EntityModels;
 
         public IEnumerable<ReviewDTO> GetAll()
         {
-            var reviews = this.data.Reviews.All().Select(r => new ReviewDTO()
+            try
             {
-                Id = r.Id,
-                Description = r.Article,
-                Category = r.Category.Title,
-                LastUpdated = r.LastUpdated,
-                Status = r.Status.Description,
-                CommentsCount = r.Comments.Count,
-                Views = r.Views
+                var reviews = this.data.Reviews.All().Select(r => new ReviewDTO()
+                {
+                    Id = r.Id,
+                    Description = r.Article,
+                    Category = r.Category.Title,
+                    LastUpdated = r.LastUpdated,
+                    Status = r.Status.Description,
+                    CommentsCount = r.Comments.Count,
+                    Views = r.Views
 
-            }).ToList();
+                }).ToList();
 
-            return reviews;
+                return reviews;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
 
         }
 

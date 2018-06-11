@@ -83,6 +83,7 @@
     word-wrap: break-word;
     padding: 20px;
     width: 900px;
+    padding-bottom : 0px;
 }
 
 .sub-text {
@@ -115,4 +116,11 @@
 .comment-text-wrapper {
     word-wrap: break-word;
     width: 930px;
+}
+.comment-button-container{
+
+}
+.comment-button-section{
+        width: 75px;
+    display: inline-block;
 }

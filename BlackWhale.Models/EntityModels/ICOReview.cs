@@ -17,6 +17,7 @@
             this.Views = 0;
             this.IsHidden = true;
             this.LastUpdated = DateTime.Now;
+            this.Comments = new HashSet<Comment>();
 
         }
 

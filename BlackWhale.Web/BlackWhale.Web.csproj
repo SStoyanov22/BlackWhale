@@ -269,7 +269,9 @@
     <Compile Include="ViewModels\Category\CategoryEditViewModel.cs" />
     <Compile Include="ViewModels\Category\CategoryIndexViewModel.cs" />
     <Compile Include="ViewModels\Comment\CommentIndexViewModel.cs" />
+    <Compile Include="ViewModels\Comment\CommentIndexWrapperViewModel.cs" />
     <Compile Include="ViewModels\Comment\CreateCommentViewModel.cs" />
+    <Compile Include="ViewModels\Comment\EditCommentViewModel.cs" />
     <Compile Include="ViewModels\GitHubReview\GitHubReviewCreateViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\ConfigureTwoFactorViewModel.cs" />
@@ -284,6 +286,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\default-avatart.jpg" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\mexico-theme\css\animate.css" />
     <Content Include="Content\mexico-theme\css\bootstrap.css" />
@@ -496,14 +499,13 @@
     <Content Include="Views\Review\_ReviewsPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CommentIndexViewModel.cshtml" />
     <Content Include="Views\Comments\_CommentsPartial.cshtml" />
-    <Content Include="Views\Comments\_CreateCommentPartial.cshtml" />
     <Content Include="Views\Review\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ReviewDetailsViewModel.cshtml" />
-	 <Content Include="Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Views\Comments\_CommentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
