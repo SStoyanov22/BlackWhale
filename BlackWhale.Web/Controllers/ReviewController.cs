@@ -11,14 +11,19 @@
     using System.IO;
     using Commons.Constants;
     using System;
+    using ViewModels.Category;
 
     public class ReviewController : BaseController
     {
         private readonly IReviewService reviewService;
+        private readonly ICategoryService categoryService;
 
-        public ReviewController(IReviewService reviewService)
+        public ReviewController(
+            IReviewService reviewService,
+            ICategoryService categoryService)
         {
             this.reviewService = reviewService;
+            this.categoryService = categoryService;
         }
 
         // GET: Review
@@ -39,7 +44,10 @@
 
         public ActionResult Create()
         {
-            return this.View();
+            var model = new ReviewCreateViewModel();
+            model.Categories = GetCategoriesDropDown();
+
+            return this.View(model);
         }
 
         [HttpPost]
@@ -65,13 +73,13 @@
 
             if (image != null)
             {
-                string path = Server.MapPath("~"+ GlobalConstants.IMAGE_PATH);
+                string path = Server.MapPath("~" + GlobalConstants.IMAGE_PATH);
 
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
                 }
-               
+
                 image.SaveAs(path + Path.GetFileName(fileName));
 
             }
@@ -86,6 +94,20 @@
             var model = Mapper.Map<ReviewDetailsViewModel>(dto);
 
             return this.View(model);
+        }
+
+        private List<SelectListItem> GetCategoriesDropDown()
+        {
+            var result = this.categoryService.GetAll().ResultData;
+
+            var categories = Mapper.Map<List<CategoryIndexViewModel>>(result)
+                .Select(c => new SelectListItem
+                {
+                    Text = c.Title,
+                    Value = c.Id.ToString()
+                }).ToList();
+
+            return categories;
         }
     }
 }

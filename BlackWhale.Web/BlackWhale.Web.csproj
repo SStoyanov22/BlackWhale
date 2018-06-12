@@ -284,6 +284,8 @@
     <Compile Include="ViewModels\Review\ReviewIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\bootstrap-select.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\default-avatart.jpg" />

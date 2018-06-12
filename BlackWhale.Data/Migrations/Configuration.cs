@@ -100,18 +100,6 @@ namespace BlackWhale.Data.Migrations
 
                 context.SaveChanges();
             }
-
-            if (!context.Comments.Any())
-            {
-                context.Comments.Add(new Comment()
-                {
-                    Author = context.User.FirstOrDefault(),
-                    Content = "asddasdasdsa",
-                    CreatedOn = DateTime.Now,
-                    IsModified = false,
-                    Review = context.Reviews.FirstOrDefault()
-                });
-            }
         }
     }
 }
