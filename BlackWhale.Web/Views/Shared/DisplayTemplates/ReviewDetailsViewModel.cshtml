@@ -16,7 +16,6 @@
             <div id="comments-container">
 
             </div>
-            <button class="btn btn-primary" id="button-comment-@Model.Id">Add Comment</button>
         </div>
     </div>
 </div>
@@ -24,6 +23,6 @@
 <script src="~/Content/scripts/comment.module.js"></script>
 <script>
     $(document).ready(function () {
-        commentModule.configreviewComments(@Model.Id);
+        commentModule.configReviewComments(@Model.Id);
     })
 </script>

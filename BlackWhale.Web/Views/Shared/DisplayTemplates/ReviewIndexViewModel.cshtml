@@ -4,22 +4,28 @@
         <header class="entry-header">
             <h2>
                 <a href="">Rethinking Mobile Tutorials</a>
-            </h2><div class="meta"><a href="" class="author"><i class="fa fa-user"></i>Robert Plant</a> <small><i class="fa fa-calendar"></i>12 December, 2015</small>
-             <a href="">
-            @if (Model.CommentsCount == 0)
-            {
-                <i class="fa fa-comment"></i><span>No Comments</span>
-            }
-            else
-            {
-                <i class="fa fa-comment"></i><span>@Model.CommentsCount Comments</span>
-            }
-             </a>
-             <small><i class="fa fa-folder"></i> <a href="">Design</a>, <a href="">Music</a></small></div>
+            </h2>
+            <div class="meta">
+                <a href="" class="author">
+                    <i class="fa fa-user"></i>@Model.Author
+                </a>
+                <small>
+                    <i class="fa fa-calendar"></i>@Model.LastUpdated.ToString("dd MMM yyyy")
+                </small>
+                <a href="/Review/Details?id=@Model.Id">
+                    @if (Model.CommentsCount == 0)
+                    {
+                        <i class="fa fa-comment"></i><span>No Comments</span>
+                    }
+                    else
+                    {
+                        <i class="fa fa-comment"></i><span>@Model.CommentsCount Comments</span>
+                    }
+                </a>
+            </div>
         </header>
         <div class="entry-content">
             @Html.Raw(Model.Article)
-
             @Html.ActionLink("Read More", "Details", new { @id = Model.Id }, new { @class = "btn btn-primary" })
         </div>
     </div>
@@ -28,6 +34,6 @@
 <script src="~/Content/scripts/comment.module.js"></script>
 <script>
     $(document).ready(function () {
-        commentModule.configreviewComments(@Model.Id);
+        commentModule.configReviewComments(@Model.Id);
     })
 </script>

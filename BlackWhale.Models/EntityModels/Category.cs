@@ -7,6 +7,10 @@
     [Table("Category")]
     public class Category
     {
+        public Category()
+        {
+            this.Reviews = new HashSet<ICOReview>();
+        }
         [Key]
         public int Id { get; set; }
 

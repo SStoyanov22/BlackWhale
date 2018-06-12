@@ -1,10 +1,12 @@
 ﻿namespace BlackWhale.Service.Interface
 {
-    using BlackWhale.Service.Response;
+    using Response;
     using Core.DTO.Comment;
 
     public interface ICommentService
     {
+        IResponse GetById(int Id);
+
         IResponse GetAll(int reviewId);
 
         IResponse Create(CommentCreateDTO dto);

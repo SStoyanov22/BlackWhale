@@ -17,6 +17,30 @@
             this.data = data;
         }
 
+        public IResponse GetById(int Id)
+        {
+            var response = new Response();
+            var comment = this.data.Comments.Find(Id);
+
+            if (comment != null)
+            {
+                var commentDto = new CommentDTO()
+                {
+                    Id = comment.Id,
+                    Author = comment.Author.UserName,
+                    Content = comment.Content,
+                    CreatedOn = comment.CreatedOn,
+                    ReviewId = comment.Review.Id,
+                    IsModified = comment.IsModified
+                };
+
+                response.ResultData = commentDto;
+                response.Status = ResponseStatus.Success;
+            }
+
+            return response;
+        }
+
         public IResponse Create(CommentCreateDTO dto)
         {
             var comment = new Comment()
@@ -38,7 +62,8 @@
                 Author = comment.Author.UserName,
                 Content = comment.Content,
                 CreatedOn = comment.CreatedOn,
-                ReviewId = comment.Review.Id
+                ReviewId = comment.Review.Id,
+                IsModified = comment.IsModified
             };
 
             return response;
@@ -79,8 +104,20 @@
                 this.data.Comments.Update(comment);
                 this.data.SaveChanges();
 
+                var editedComment = this.data.Comments.Find(dto.Id);
+                var editedCommentDto = new CommentDTO()
+                {
+                    Author = editedComment.Author.UserName,
+                    Id = editedComment.Id,
+                    Content = editedComment.Content,
+                    CreatedOn = editedComment.CreatedOn,
+                    ReviewId = editedComment.Review.Id,
+                    IsModified = editedComment.IsModified
+                };
+
                 responce.Status = ResponseStatus.Success;
                 responce.Message = "Coment is successfully edited";
+                responce.ResultData = editedCommentDto;
 
                 return responce;
             }
@@ -104,7 +141,8 @@
                     Author = c.Author.UserName,
                     Content = c.Content,
                     CreatedOn = c.CreatedOn,
-                    ReviewId = c.Review.Id
+                    ReviewId = c.Review.Id,
+                    IsModified = c.IsModified
                 });
 
             responce.ResultData = comments;
@@ -112,5 +150,7 @@
             return responce;
 
         }
+
+      
     }
 }

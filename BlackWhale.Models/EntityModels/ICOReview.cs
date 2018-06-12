@@ -14,13 +14,11 @@
 
         public ICOReview()
         {
-            this.Views = 0;
-            this.IsHidden = true;
-            this.LastUpdated = DateTime.Now;
-
+            this.Comments = new HashSet<Comment>();
         }
 
         public string Title { get; set; }
+         
         public virtual Category Category { get; set; }
 
         public virtual Status Status { get; set; }
@@ -28,14 +26,6 @@
         public string Article { get; set; }
 
         public string Description { get; set; }
-
-        public int CountDolphins { get; set; }
-
-        public int CountWhales { get; set; }
-
-        public int CountShrimps { get; set; }
-
-        public int CountPass { get; set; }
 
         public int Views { get; set; }
 

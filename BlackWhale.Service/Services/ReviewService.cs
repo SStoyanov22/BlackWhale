@@ -22,19 +22,27 @@ using BlackWhale.Models.EntityModels;
 
         public IEnumerable<ReviewDTO> GetAll()
         {
-            var reviews = this.data.Reviews.All().Select(r => new ReviewDTO()
+            try
             {
-                Id = r.Id,
-                Description = r.Article,
-                Category = r.Category.Title,
-                LastUpdated = r.LastUpdated,
-                Status = r.Status.Description,
-                CommentsCount = r.Comments.Count,
-                Views = r.Views
+                var reviews = this.data.Reviews.All().Select(r => new ReviewDTO()
+                {
+                    Id = r.Id,
+                    Article = r.Article,
+                    Category = r.Category.Title,
+                    LastUpdated = r.LastUpdated,
+                    Status = r.Status.Description,
+                    CommentsCount = r.Comments.Count,
+                    Views = r.Views
 
-            }).ToList();
+                }).ToList();
 
-            return reviews;
+                return reviews;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
 
         }
 
@@ -42,12 +50,15 @@ using BlackWhale.Models.EntityModels;
         {
             var response = new Response();
             if (dto != null)
-        {
+            {
                 response.Status = ResponseStatus.Success;
                 response.ResultData = dto;
-            var review = new ICOReview();
+                var review = new ICOReview();
 
-            review.Article = dto.Article;
+                review.Article = dto.Article;
+                review.Description = dto.Description;
+                review.Title = dto.Title;
+                review.LastUpdated = DateTime.Now;
 
             this.data.Reviews.Add(review);
             this.data.SaveChanges();
@@ -71,14 +82,10 @@ using BlackWhale.Models.EntityModels;
                 {
                     Id = review.Id,
                     Title = review.Title,
-                    Description = review.Description,
+                    Article = review.Article,
                     CommentsCount = review.Comments.ToList().Count,
                     LastUpdated = review.LastUpdated,
-                    Views = review.Views,
-                    CountDolphins = review.CountDolphins,
-                    CountPass = review.CountPass,
-                    CountShrimps = review.CountShrimps,
-                    CountWhales = review.CountWhales
+                    Views = review.Views
                 };
 
                 response.Status = ResponseStatus.Success;

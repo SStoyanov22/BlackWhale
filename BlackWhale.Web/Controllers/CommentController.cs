@@ -20,21 +20,17 @@
         public ActionResult GetCommentsForReview(int reviewId)
         {
             var comments = this.commentService.GetAll(reviewId).ResultData;
-            var viewModel = Mapper.Map<IEnumerable<CommentIndexViewModel>>(comments);
+            var commentsViewModel = Mapper.Map<IEnumerable<CommentIndexViewModel>>(comments);
+            var wrapperViewModel = new CommentIndexWrapperViewModel();
 
-            return PartialView("~/Views/Comments/_CommentsPartial.cshtml", viewModel);
-        }
+            wrapperViewModel.Comments = commentsViewModel;
+            wrapperViewModel.ReviewId = reviewId;
 
-        [HttpGet]
-        public ActionResult Create(int reviewId)
-        {
-            var viewModel = new CreateCommentViewModel();
-            viewModel.ReviewId = reviewId;
-
-            return PartialView("~/Views/Comments/_CreateCommentPartial.cshtml", viewModel);
+            return PartialView("~/Views/Comments/_CommentsPartial.cshtml", wrapperViewModel);
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Create(CreateCommentViewModel model)
         {
             if (this.ModelState.IsValid)
@@ -43,14 +39,46 @@
                 dto.Author = User.Identity.Name;
 
                var comment =  (CommentDTO) this.commentService.Create(dto).ResultData;
-                var map = new List<CommentDTO>() { comment };
 
-                var viewModel = Mapper.Map<IEnumerable<CommentIndexViewModel>>(map);
-                return PartialView("~/Views/Comments/_CommentsPartial.cshtml", viewModel);
+                var viewModel = Mapper.Map<CommentIndexViewModel>(comment);
+                return PartialView("~/Views/Comments/_CommentPartial.cshtml", viewModel);
             }
 
             return Json(new { }, JsonRequestBehavior.AllowGet);
 
+        }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult Edit(EditCommentViewModel model)
+        {
+            if (this.ModelState.IsValid)
+            {
+                var dto = Mapper.Map<CommentEditDTO>(model);
+
+                var comment = (CommentDTO)this.commentService.Edit(dto).ResultData;
+
+                var viewModel = Mapper.Map<CommentIndexViewModel>(comment);
+                return PartialView("~/Views/Comments/_CommentPartial.cshtml", viewModel);
+            }
+
+            return Json(new { }, JsonRequestBehavior.AllowGet);
+
+        }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult Delete(int id)
+        {
+            var comment = this.commentService.GetById(id).ResultData;
+
+            if (comment!=null)
+            {
+                this.commentService.Delete(id);
+                return Json(new { }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { }, JsonRequestBehavior.AllowGet);
         }
     }
 }
