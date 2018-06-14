@@ -3,6 +3,21 @@
 <div class="detailBox">
     <div class="actionBox">
         <ul class="commentList">
+            @if (Model.Comments.Count() == 0)
+            {
+                <li>
+                    <div class="commenterImage">
+                        <img src="~/Content/Images/default-avatart.jpg" />
+                        <span class="sub-text-author">user@user.com</span>
+                    </div>
+                    <div class="commentText">
+                        <p  class="comment-text-wrapper sub-text-author">Write the first comment...</p>
+                        <textarea class="comment-text-wrapper" style="display : none"></textarea>
+                       
+                    </div>
+                    <hr />
+                </li>
+            }
             @Html.DisplayFor(c => c.Comments)
         </ul>
         <div class="form-inline">
