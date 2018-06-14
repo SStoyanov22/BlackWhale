@@ -35,16 +35,39 @@
 
     }
 
-    function configReviewIndexView() {
+    function configReviewIndexView(categoryId, statusId) {
         var $reviewsContainerSelector = $("#reviews-container");
 
-        $.get("/Review/GetReviews").then(function (reviews) {
-            $reviewsContainerSelector.html(reviews);
-        })
+        getReviews(categoryId, statusId);
+
+        function getReviews(categoryId, statusId) {
+
+            var data = {
+                CategoryId: categoryId,
+                StatusId: statusId
+            };
+
+            $.get("/Review/GetReviews",data).then(function (reviews) {
+                $reviewsContainerSelector.html(reviews);
+            })
+        }
 
         function initEvents() {
-            var a = 5;
+            $("#categories-drowdown").on("change", function () {
+                var categoryId = $("#categories-drowdown option:selected").val();
+                var statusId = $("#statuses-dropdown option:selected").val();
+                getReviews(categoryId, statusId);
+            });
+
+            $("#statuses-drowdown").on("change", function () {
+                var categoryId = $("#categories-drowdown option:selected").val();
+                var statusId = $("#statuses-drowdown option:selected").val();
+                getReviews(categoryId, statusId);
+            });
         }
+
+
+        initEvents();
     }
 
     return {

@@ -52,7 +52,10 @@
     <Compile Include="DTO\Review\CreateReviewDTO.cs" />
     <Compile Include="DTO\GitHubReview\CreateGitHubReviewDTO.cs" />
     <Compile Include="DTO\Review\DetailsReviewDTO.cs" />
+    <Compile Include="DTO\Review\EditReviewDTO.cs" />
     <Compile Include="DTO\Review\ReviewDTO.cs" />
+    <Compile Include="DTO\Review\SortReviewDTO.cs" />
+    <Compile Include="DTO\Status\StatusDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

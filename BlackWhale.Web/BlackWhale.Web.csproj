@@ -279,9 +279,13 @@
     <Compile Include="ViewModels\Manage\IndexViewModel.cs" />
     <Compile Include="ViewModels\Manage\ManageLoginsViewModel.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Review\ReviewEditViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewCreateViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Review\ReviewIndexPageViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewIndexViewModel.cs" />
+    <Compile Include="ViewModels\Review\SortReviewModel.cs" />
+    <Compile Include="ViewModels\Status\StatusIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-select.min.css" />
@@ -505,6 +509,7 @@
     <Content Include="Views\Shared\DisplayTemplates\ReviewDetailsViewModel.cshtml" />
     <Content Include="Views\Shared\_Sidebar.cshtml" />
     <Content Include="Views\Comments\_CommentPartial.cshtml" />
+    <Content Include="Views\Review\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

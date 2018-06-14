@@ -6,6 +6,12 @@
     {
         public int Id { get; set; }
 
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        public string ImageUrl { get; set; }
+
         public string Article { get; set; }
 
         public string Reviewer { get; set; }
@@ -19,16 +25,5 @@
         public DateTime LastUpdated { get; set; }
 
         public int Views { get; set; }
-
-        public string Title { get; set; }
-
-        public int CountDolphins { get; set; }
-
-        public int CountWhales { get; set; }
-
-        public int CountShrimps { get; set; }
-
-        public int CountPass { get; set; }
-
     }
 }

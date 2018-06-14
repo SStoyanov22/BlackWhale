@@ -18,9 +18,17 @@
         }
 
         public string Title { get; set; }
-         
+
+        public string ImageUrl { get; set; }
+
+        public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
 
+        public int StatusId { get; set; }
+
+        [ForeignKey("StatusId")]
         public virtual Status Status { get; set; }
 
         public string Article { get; set; }

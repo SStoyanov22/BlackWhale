@@ -1,4 +1,6 @@
-﻿<div class="wrapper">
+﻿@model BlackWhale.Web.ViewModels.Review.ReviewIndexPageViewModel
+@using BlackWhale.Commons.Constants;
+<div class="wrapper">
     <header class="pagetitle pagetitle-sm">
         <div class="container">
             <div class="divtable irow">
@@ -8,15 +10,39 @@
                     </div>
                     <span class="subtitle">List of Reviews</span>
                 </div>
+                @if (User.IsInRole(GlobalConstants.ROLE_ADMINISTRATOR))
+                {
+                    <div class="divcell text-right">
+                        <a href="/Review/Create" class="btn btn-primary create-review-button">Create Review</a>
+                    </div>
+                }
             </div>
         </div>
     </header>
-    <div class="content">
-        <div class="text-right">
-            <a href="/Review/Create" class="btn btn-primary">Create Review</a>
+    <div class="content row">
+        <div class="col-md-3 col-xs-offset-right-1">
+            @Html.Partial("_SideBar")
         </div>
-        <div class="content" id="reviews-container">
-           
+        <div class="col-md-8">
+            <div class="form-group">
+               <div class="row">
+                   <div class="col-md-6">
+                       @Html.LabelFor(r => r.Categories, new { @class = "col-sm-6" })
+                       <div class="col-sm-10" id="form-review-content">
+                           @Html.DropDownListFor(r => r.CategoryId, @Model.Categories, new { @id = "categories-drowdown" })
+                       </div>
+                   </div>
+                  <div class="col-md-6">
+                      @Html.LabelFor(r => r.Statuses, new { @class = "col-sm-6" })
+                      <div class="col-sm-10" id="form-review-content">
+                          @Html.DropDownListFor(r => r.StatusId, @Model.Statuses, new { @id = "statuses-drowdown" })
+                      </div>
+                  </div>
+               </div>
+            </div>
+            <div id="reviews-container">
+
+            </div>
         </div>
     </div>
 </div>

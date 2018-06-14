@@ -18,8 +18,8 @@
 
         var $commentContainerSelector = $(".commentList")
         var self = this;
-
-        $("#button-comment").on("click", function () {
+        
+        $("#button-comment-" + reviewId).on("click", function () {
             var content = $("#comment-input-field").val();
 
             var data = {

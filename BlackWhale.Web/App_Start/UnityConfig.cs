@@ -32,10 +32,11 @@
             container.RegisterType<IBlackWhaleDbContext, BlackWhaleDbContext>();
             container.RegisterType<IBlackWhaleData, BlackWhaleData>();
 
-            container.RegisterType<IReviewService, ReviewService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IReviewService, ReviewService>();
 
-            container.RegisterType<ICategoryService, CategoryService>(new HierarchicalLifetimeManager());
-            container.RegisterType<ICommentService, CommentService>(new HierarchicalLifetimeManager());
+            container.RegisterType<ICategoryService, CategoryService>();
+            container.RegisterType<ICommentService, CommentService>();
+            container.RegisterType<IStatusService, StatusService>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

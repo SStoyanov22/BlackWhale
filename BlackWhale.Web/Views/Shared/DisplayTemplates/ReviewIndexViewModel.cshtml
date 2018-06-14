@@ -1,16 +1,17 @@
 ﻿@model BlackWhale.Web.ViewModels.Review.ReviewIndexViewModel
+@using BlackWhale.Commons.Constants;
 <div class="container post format-standart">
     <div class="entry">
         <header class="entry-header">
             <h2>
-                <a href="">Rethinking Mobile Tutorials</a>
+                <a href="">@Model.Title</a>
             </h2>
             <div class="meta">
                 <a href="" class="author">
-                    <i class="fa fa-user"></i>@Model.Author
+                    <i class="fa fa-user"></i>@Model.Reviewer
                 </a>
                 <small>
-                    <i class="fa fa-calendar"></i>@Model.LastUpdated.ToString("dd MMM yyyy")
+                    <i class="fa fa-calendar"></i>@Model.LastUpdated.ToString("dd MMM yyyy : HH:ss")
                 </small>
                 <a href="/Review/Details?id=@Model.Id">
                     @if (Model.CommentsCount == 0)
@@ -22,11 +23,26 @@
                         <i class="fa fa-comment"></i><span>@Model.CommentsCount Comments</span>
                     }
                 </a>
+
+                <small><i class="fa fa-folder"></i> @Model.Category</small>
+                <small><i class="fa fa-folder"></i> @Model.Status</small>
             </div>
         </header>
         <div class="entry-content">
-            @Html.Raw(Model.Article)
-            @Html.ActionLink("Read More", "Details", new { @id = Model.Id }, new { @class = "btn btn-primary" })
+            <div>
+                <img class="review-main-image" src="~/Content/Images/@Model.ImageUrl" />
+               <div class="review-description-container">
+                   <p class="review-description-text">@Model.Description</p>
+               </div>
+
+            </div>
+           <div>
+               @Html.ActionLink("Read More", "Details", new { @id = Model.Id }, new { @class = "btn btn-primary" })
+               @if (User.IsInRole(GlobalConstants.ROLE_ADMINISTRATOR))
+               {
+                   @Html.ActionLink("Edit", "Edit", new { @id = Model.Id }, new { @class = "btn btn-primary" })
+               }
+           </div>
         </div>
     </div>
 </div>

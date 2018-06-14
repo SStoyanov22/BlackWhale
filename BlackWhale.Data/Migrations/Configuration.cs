@@ -28,9 +28,12 @@ namespace BlackWhale.Data.Migrations
 
         private void SeedStatuses(BlackWhaleDbContext context)
         {
-            context.Statuses.Add(new Status() { Description = "Upcoming" });
-            context.Statuses.Add(new Status() { Description = "Past" });
-            context.Statuses.Add(new Status() { Description = "Network / Communications" });
+            if (!context.Statuses.Any())
+            {
+                context.Statuses.Add(new Status() { Description = "Upcoming" });
+                context.Statuses.Add(new Status() { Description = "Past" });
+                context.Statuses.Add(new Status() { Description = "Network / Communications" });
+            }
 
         }
 

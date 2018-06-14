@@ -3,18 +3,23 @@
     <div class="entry">
         <header class="entry-header">
             <h2>
-                <a href="">Rethinking Mobile Tutorials</a>
-            </h2><div class="meta">
-                <a href="" class="author"><i class="fa fa-user"></i>Robert Plant</a> <small><i class="fa fa-calendar"></i>12 December, 2015</small>
-           
-                <small><i class="fa fa-folder"></i> <a href="">Design</a>, <a href="">Music</a></small>
+                <a href="">@Model.Title</a>
+            </h2>
+            <div class="meta">
+                <a href="" class="author">
+                    <i class="fa fa-user"></i>@Model.Reviewer
+                </a>
+                <small>
+                    <i class="fa fa-calendar"></i>@Model.LastUpdated.ToString("dd MMM yyyy : HH:ss")
+                </small>
+
+                <small><i class="fa fa-folder"></i> @Model.Category</small>
+                <small><i class="fa fa-folder"></i> @Model.Status</small>
             </div>
         </header>
         <div class="entry-content">
             @Html.Raw(Model.Article)
-
             <div id="comments-container">
-
             </div>
         </div>
     </div>
