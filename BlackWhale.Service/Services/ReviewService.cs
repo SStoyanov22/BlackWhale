@@ -110,6 +110,8 @@
                     Title = review.Title,
                     Article = review.Article,
                     Category = review.Category.Title,
+                    CategoryId = review.CategoryId,
+                    StatusId = review.StatusId,
                     LastUpdated = review.LastUpdated,
                     Status = review.Status.Description,
                     Views = review.Views

@@ -9,6 +9,10 @@
 
         public string Category { get; set; }
 
+        public int CategoryId { get; set; }
+
+        public int StatusId { get; set; }
+
         public string ImageUrl { get; set; }
 
         public string Status { get; set; }
