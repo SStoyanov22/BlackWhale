@@ -1,4 +1,8 @@
-﻿
+﻿.header {
+    position: relative;
+    z-index: 221;
+    background-color: #262626;
+}
 .cards-text-height {
     height: 312px;
 }
