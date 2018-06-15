@@ -89,6 +89,14 @@
       <HintPath>..\packages\NotyMVC.1.1.0\lib\NotyNotification.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -279,12 +287,14 @@
     <Compile Include="ViewModels\Manage\IndexViewModel.cs" />
     <Compile Include="ViewModels\Manage\ManageLoginsViewModel.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Review\PageViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewEditViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewCreateViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewDetailsViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewIndexPageViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewIndexViewModel.cs" />
-    <Compile Include="ViewModels\Review\SortReviewModel.cs" />
+    <Compile Include="ViewModels\Review\FilterReviewModel.cs" />
+    <Compile Include="ViewModels\Review\ReviewPagedViewModel.cs" />
     <Compile Include="ViewModels\Status\StatusIndexViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -315,6 +325,7 @@
     <Content Include="Content\mexico-theme\webfonts\fa-brands-400.svg" />
     <Content Include="Content\mexico-theme\webfonts\fa-regular-400.svg" />
     <Content Include="Content\mexico-theme\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\scripts\comment.module.js" />
     <Content Include="Content\scripts\notify.module.js" />
     <Content Include="Content\scripts\review.module.js" />

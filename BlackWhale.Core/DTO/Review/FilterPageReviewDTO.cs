@@ -1,6 +1,6 @@
 ﻿namespace BlackWhale.Core.DTO.Review
 {
-    public class SortReviewDTO
+    public class FilterReviewDTO
     {
         public int CategoryId { get; set; }
 

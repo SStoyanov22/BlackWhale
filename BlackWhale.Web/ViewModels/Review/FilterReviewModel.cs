@@ -3,10 +3,12 @@
     using Commons.Mapper;
     using Core.DTO.Review;
 
-    public class SortReviewModel : IMapTo<SortReviewDTO>
+    public class FilterReviewModel : IMapTo<FilterReviewDTO>
     {
         public int CategoryId { get; set; }
 
         public int StatusId { get; set; }
+
+        public PageViewModel Page{ get; set; }
     }
 }

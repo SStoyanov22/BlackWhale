@@ -19,7 +19,7 @@
             this.data = data;
         }
 
-        public IEnumerable<ReviewDTO> GetAll(SortReviewDTO sort)
+        public IEnumerable<ReviewDTO> GetAll(FilterReviewDTO sort)
         {
             var expression = SortByCriteria(sort);
             var reviews = this.data.Reviews.All().Where(expression).Select(r => new ReviewDTO()
@@ -42,7 +42,7 @@
 
         }
 
-        private static Expression<Func<ICOReview, bool>> SortByCriteria(SortReviewDTO sort)
+        private static Expression<Func<ICOReview, bool>> SortByCriteria(FilterReviewDTO sort)
         {
             if (sort.CategoryId > 0 && sort.StatusId > 0)
             {

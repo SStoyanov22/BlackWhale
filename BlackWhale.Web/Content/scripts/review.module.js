@@ -36,40 +36,104 @@
     }
 
     function configReviewIndexView(categoryId, statusId) {
+        var currentPage = 1;
+        var pageSize = 3;
         var $reviewsContainerSelector = $("#reviews-container");
 
-        getReviews(categoryId, statusId);
+        var filterPage = {
+            categoryId : categoryId,
+            statusId: statusId,
+            currentPage: currentPage,
+            pageSize : pageSize
+        }
 
-        function getReviews(categoryId, statusId) {
+        getReviews(filterPage);
+
+        function getReviews(filterPage) {
 
             var data = {
-                CategoryId: categoryId,
-                StatusId: statusId
+                CategoryId: filterPage.categoryId,
+                StatusId: filterPage.statusId,
+                Page: {
+                    CurrentPage: filterPage.currentPage,
+                    PageSize : filterPage.pageSize
+                }
             };
 
-            $.get("/Review/GetReviews",data).then(function (reviews) {
-                $reviewsContainerSelector.html(reviews);
+            $.post("/Review/GetReviews",data).then(function (data) {
+                $reviewsContainerSelector.html(data);
+                var numberOfPages = parseInt($("#number-of-pages").val());
+                paginationEvents(numberOfPages)
+
             })
         }
 
         function initEvents() {
+
+
             $("#categories-drowdown").on("change", function () {
+
                 var categoryId = $("#categories-drowdown option:selected").val();
                 var statusId = $("#statuses-dropdown option:selected").val();
-                getReviews(categoryId, statusId);
+
+                currentPage = 1;
+
+                var filterPage = {
+                    categoryId: categoryId,
+                    statusId: statusId,
+                    currentPage: currentPage,
+                    pageSize: pageSize
+                }
+                getReviews(filterPage);
             });
 
             $("#statuses-drowdown").on("change", function () {
+
                 var categoryId = $("#categories-drowdown option:selected").val();
                 var statusId = $("#statuses-drowdown option:selected").val();
-                getReviews(categoryId, statusId);
+
+                currentPage = 1;
+
+                var filterPage = {
+                    categoryId: categoryId,
+                    statusId: statusId,
+                    currentPage: currentPage,
+                    pageSize: pageSize
+                }
+                getReviews(filterPage);
             });
+
+            var numberOfPages = parseInt($("#number-of-pages").val());
+            paginationEvents(numberOfPages)
+
         }
 
+        function paginationEvents(numberOfPages) {
 
+            for (var i = 0; i < numberOfPages; i++) {
+                var index = i + 1;
+                if (currentPage == index) {
+                    $("#page-button-" + index).parent().addClass("active")
+                }
+                $("#page-button-" + index).on("click", function () {
+                    var value = $(this).attr("data");
+                    currentPage = value
+                    var categoryId = $("#categories-drowdown option:selected").val();
+                    var statusId = $("#statuses-drowdown option:selected").val();
+                    var filterPage = {
+                        categoryId: categoryId,
+                        statusId: statusId,
+                        currentPage: currentPage,
+                        pageSize: pageSize
+                    }
+                    getReviews(filterPage);
+                })
+            }
+        }
         initEvents();
-    }
 
+    }
+    
     return {
         configReviewIndexView: configReviewIndexView,
         configReviewCreateView: configReviewCreateView

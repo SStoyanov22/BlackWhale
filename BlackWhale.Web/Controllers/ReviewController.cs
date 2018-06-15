@@ -36,18 +36,29 @@
             var model = new ReviewIndexPageViewModel();
             model.Categories = GetCategoriesDropDown();
             model.Statuses = GetStatusesDropDown();
+
             return View(model);
         }
 
-        [HttpGet]
-        public ActionResult GetReviews(SortReviewModel sort)
+        [HttpPost]
+        public ActionResult GetReviews(FilterReviewModel filter)
         {
-            var sortDto = Mapper.Map<SortReviewDTO>(sort);
+            var sortDto = Mapper.Map<FilterReviewDTO>(filter);
             var reviews = this.reviewService.GetAll(sortDto).ToList();
 
-            var viewModel = Mapper.Map<IEnumerable<ReviewIndexViewModel>>(reviews);
+            var viewModel = Mapper.Map<IEnumerable<ReviewIndexViewModel>>(reviews)
+                .Skip((filter.Page.CurrentPage - 1) * filter.Page.PageSize)
+                .Take(filter.Page.PageSize).ToList(); ;
 
-            return PartialView("~/Views/Review/_ReviewsPartial.cshtml", viewModel);
+            var numberOfPages = (int)(Math.Ceiling((double)reviews.Count() / filter.Page.PageSize));
+
+            var pagedViewModel = new ReviewPagedViewModel()
+            {
+                Reviews = viewModel,
+                NumberOfPages = numberOfPages
+            };
+
+            return PartialView("~/Views/Review/_ReviewsPartial.cshtml", pagedViewModel);
         }
 
         public ActionResult Create()
