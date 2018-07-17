@@ -13,6 +13,7 @@
     using System;
     using ViewModels.Category;
     using ViewModels.Status;
+    using Filters;
 
     public class ReviewController : BaseController
     {
@@ -40,25 +41,26 @@
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult GetReviews(FilterReviewModel filter)
+        [HttpGet]
+        [JsonResultFilter]
+        public ActionResult GetReviews()
         {
-            var sortDto = Mapper.Map<FilterReviewDTO>(filter);
-            var reviews = this.reviewService.GetAll(sortDto).ToList();
+            //var sortDto = Mapper.Map<FilterReviewDTO>(filter);
+            var reviews = this.reviewService.GetAll(/*sortDto*/).ToList();
 
-            var viewModel = Mapper.Map<IEnumerable<ReviewIndexViewModel>>(reviews)
-                .Skip((filter.Page.CurrentPage - 1) * filter.Page.PageSize)
-                .Take(filter.Page.PageSize).ToList(); ;
+            var viewModel = Mapper.Map<IEnumerable<ReviewIndexViewModel>>(reviews);
+                //.Skip((filter.Page.CurrentPage - 1) * filter.Page.PageSize)
+                //.Take(filter.Page.PageSize).ToList(); ;
 
-            var numberOfPages = (int)(Math.Ceiling((double)reviews.Count() / filter.Page.PageSize));
+           // var numberOfPages = (int)(Math.Ceiling((double)reviews.Count() / filter.Page.PageSize));
 
             var pagedViewModel = new ReviewPagedViewModel()
             {
                 Reviews = viewModel,
-                NumberOfPages = numberOfPages
+                NumberOfPages = /*numberOfPages*/1
             };
 
-            return PartialView("~/Views/Review/_ReviewsPartial.cshtml", pagedViewModel);
+            return Json(viewModel, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Create()
@@ -106,12 +108,13 @@
         }
 
         [HttpGet]
+        [JsonResultFilter]
         public ActionResult Details(int id)
         {
             var dto = this.reviewService.Details(id).ResultData;
             var model = Mapper.Map<ReviewDetailsViewModel>(dto);
 
-            return this.View(model);
+            return this.Json(model, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]

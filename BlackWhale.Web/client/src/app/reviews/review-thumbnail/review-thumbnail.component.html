@@ -1,0 +1,45 @@
+<div class="container post format-standart">
+    <div class="entry">
+        <header class="entry-header">
+            <h2>
+                <a [routerLink]="['details',review.Id]">{{review.Title}}</a>
+            </h2>
+            <div class="meta">
+                <a href="" class="author">
+                    <i class="fa fa-user"></i>{{review.Reviewer}}
+                </a>
+                <small>
+                    <i class="fa fa-calendar"></i>{{review.LastUpdated | date}}
+                </small>
+                <a >
+                    <div *ngIf="review.CommentsCount == 0">
+                        <i class="fa fa-comment"></i><span>No Comments</span>
+                    </div>
+                    <div *ngIf="review.CommentsCount > 0">
+                        <i class="fa fa-comment"></i><span>{{review.CommentsCount}} Comments</span>                        
+                    </div>
+                </a>
+
+                <small><i class="fa fa-folder"></i> {{review.Category}}</small>
+                <small><i class="fa fa-folder"></i> {{review.Status}}</small>
+            </div>
+        </header>
+        <div class="entry-content">
+            <div>
+                <img class="review-main-image" src="/Content/Images/{{review.ImageUrl}}" />
+               <div class="review-description-container">
+                   <p class="review-description-text">{{review.Description}}</p>
+               </div>
+
+            </div>
+           <div>
+               <!-- @Html.ActionLink("Read More", "Details", new { @id = Model.Id }, new { @class = "btn btn-primary" })
+               @if (User.IsInRole(GlobalConstants.ROLE_ADMINISTRATOR))
+               {
+                   @Html.ActionLink("Edit", "Edit", new { @id = Model.Id }, new { @class = "btn btn-primary" })
+               } -->
+           </div>
+        </div>
+    </div>
+</div>
+<hr>

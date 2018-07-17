@@ -1,0 +1,42 @@
+
+<li id="comment-{{comment.Id}}">
+    <div class="commenterImage">
+        <img src="/Content/Images/default-avatart.jpg" />
+        <span class="sub-text-author">{{comment.Author}}</span>
+    </div>
+    <div>
+
+
+    <span *ngIf="comment.IsModifed == true" class="date sub-text">{{comment.CreatedOn}} - Modified</span>
+
+    <span *ngIf="comment.IsModifed == false "class="date sub-text">{{comment.CreatedOn}} </span>
+       
+    </div>
+    <div class="commentText">
+        <p id="comment-text-{{comment.Id}}" class="comment-text-wrapper">{{comment.Content}}</p>
+        <textarea id="comment-text-input-{{comment.Id}}" class="comment-text-wrapper" style="display : none"></textarea>
+       
+       <!-- @if (Model.Author == User.Identity.Name)
+       { -->
+        <div class="comment-button-container">
+            <div class="comment-button-section" id="edit-button-section-{{comment.Id}}">
+                <span class="glyphicon glyphicon-pencil"></span>
+                <a href="#/" id="edit-comment-button-{{comment.Id}}" class="comment-button-action">
+                    <span id="edit-comment-name-{{comment.Id}}">Edit</span>
+                </a>
+            </div>
+            <div class="comment-button-section" id="save-button-section-{{comment.Id}}" style="display : none">
+                <span class="glyphicon glyphicon-check"></span>
+                <a href="#/" id="save-comment-button-{{comment.Id}}" class="comment-button-action">
+                    <span id="save-comment-name-{{comment.Id}}">Save</span>
+                </a>
+            </div>
+            <div class="comment-button-section" id="delete-button-section-{{comment.Id}}">
+                <span class="glyphicon glyphicon-remove"></span>
+                <a href="#/" id="delete-comment-button-{{comment.Id}}" class="comment-button-action">Delete</a>
+            </div>
+        </div>
+       <!-- } -->
+    </div>
+    <hr />
+</li>

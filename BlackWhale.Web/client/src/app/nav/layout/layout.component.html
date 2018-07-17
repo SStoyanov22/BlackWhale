@@ -1,0 +1,47 @@
+ <!-- NAVBAR -->
+ <nav class="navbar container sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+    <!-- NAVBAR BRAND -->
+    <a class="navbar-brand pull-left" href="">
+        BlackWhale
+    </a>
+    <!-- NAVBAR COLLAPSE -->
+    <div id="navbar" class="navbar-collapse pull-right">
+        <ul class="nav navbar-nav">
+            <li class="active dropdown">
+                <a [routerLink]="['/']" class="sf-with-ul">Home</a>
+            </li>
+            <li class="dropdown">
+                <a [routerLink]="['/reviews']" class="sf-with-ul">Reviews</a>
+            </li>
+            <li class="dropdown">
+                <a [routerLink]="['/home/about']" class="sf-with-ul">About</a>
+            </li>
+            <li class="dropdown">
+                <a href="" class="sf-with-ul">Crypto 101</a>
+            </li>
+            <li class="dropdown">
+                <a href="" class="sf-with-ul">Crypto Trading</a>
+            </li>
+
+                <li class="dropdown">
+                    <a [routerLink]="['/account/login']" class="sf-with-ul">Login</a>
+                </li>
+                        <li class="dropdown">
+                            <a [routerLink]="['/account/register']" class="sf-with-ul">Register</a>
+                        </li>
+
+                <li class="dropdown">
+                    <a href="" class="sf-with-ul">@User.Identity.Name</a>
+                </li>
+                        <li class="dropdown">
+                            
+                            <a class="sf-with-ul" href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+
+                        </li>
+            
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+
+</nav>
+<!-- /.navbar -->

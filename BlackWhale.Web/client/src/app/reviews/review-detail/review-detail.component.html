@@ -1,0 +1,25 @@
+<div class="container post format-standart">
+    <div class="entry">
+        <header class="entry-header">
+            <h2>
+                <a href="">{{review.Title}}</a>
+            </h2>
+            <div class="meta">
+                <a href="" class="author">
+                    <i class="fa fa-user"></i>{{review.Reviewer}}
+                </a>
+                <small>
+                    <i class="fa fa-calendar"></i>{{review.LastUpdated | date}}
+                </small>
+
+                <small><i class="fa fa-folder"></i> {{review.Category}}</small>
+                <small><i class="fa fa-folder"></i> {{review.Status}}</small>
+            </div>
+        </header>
+        <div class="entry-content" innerHTML="{{review.Article}}">
+            
+        </div>
+        <comments [reviewId]="review.Id"></comments>
+    </div>
+</div>
+<hr>

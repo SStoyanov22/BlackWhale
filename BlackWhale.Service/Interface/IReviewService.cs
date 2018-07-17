@@ -6,7 +6,7 @@
 
     public interface IReviewService
     {
-        IEnumerable<ReviewDTO> GetAll(FilterReviewDTO sort);
+        IEnumerable<ReviewDTO> GetAll(/*FilterReviewDTO sort*/);
 
         IResponse Create(CreateReviewDTO dto);
 

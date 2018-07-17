@@ -26,7 +26,7 @@
             wrapperViewModel.Comments = commentsViewModel;
             wrapperViewModel.ReviewId = reviewId;
 
-            return PartialView("~/Views/Comments/_CommentsPartial.cshtml", wrapperViewModel);
+            return this.Json(commentsViewModel, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

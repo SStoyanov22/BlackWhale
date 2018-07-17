@@ -19,10 +19,10 @@
             this.data = data;
         }
 
-        public IEnumerable<ReviewDTO> GetAll(FilterReviewDTO sort)
+        public IEnumerable<ReviewDTO> GetAll(/*FilterReviewDTO sort*/)
         {
-            var expression = SortByCriteria(sort);
-            var reviews = this.data.Reviews.All().Where(expression).Select(r => new ReviewDTO()
+           // var expression = SortByCriteria(sort);
+            var reviews = this.data.Reviews.All()/*.Where(expression)*/.Select(r => new ReviewDTO()
             {
                 Id = r.Id,
                 Reviewer = r.Reviewer.UserName,
