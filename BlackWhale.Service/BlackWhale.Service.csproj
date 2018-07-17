@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Interface\ICategoryService.cs" />
     <Compile Include="Interface\ICommentService.cs" />
+    <Compile Include="Interface\ISubmitedICOService.cs" />
     <Compile Include="Interface\IReviewService.cs" />
     <Compile Include="Interface\IStatusService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Services\ReviewService.cs" />
     <Compile Include="Services\StatusService.cs" />
+    <Compile Include="Services\SubmitedICOService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

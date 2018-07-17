@@ -29,6 +29,8 @@
 
         public IRepository<Comment> Comments { get { return this.GetRepository<Comment>(); } }
 
+        public IRepository<SubmittedICO> SubmittedICO { get { return this.GetRepository<SubmittedICO>(); } }
+
         public int SaveChanges()
         {
             return this.context.SaveChanges();

@@ -16,6 +16,8 @@
         
         IRepository<Comment> Comments { get; }
 
-    int SaveChanges();
+        IRepository<SubmittedICO> SubmittedICO { get; }
+
+        int SaveChanges();
     }
 }

@@ -18,6 +18,7 @@
 
         IDbSet<Comment> Comments { get; set; }
 
+        IDbSet<SubmittedICO> SubmittedICO { get; set; }
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;

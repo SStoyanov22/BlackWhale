@@ -100,6 +100,7 @@
     <Compile Include="EntityModels\GitHubReview.cs" />
     <Compile Include="EntityModels\ICOReview.cs" />
     <Compile Include="EntityModels\Status.cs" />
+    <Compile Include="EntityModels\SubmittedICO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
